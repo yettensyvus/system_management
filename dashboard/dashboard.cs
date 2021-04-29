@@ -122,6 +122,18 @@ namespace dashboard
             open_form(fm);
         }
 
+        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
+        {
+            frm_peoples fm = new frm_peoples();
+            open_form(fm);
+        }
+
+        private void gunaAdvenceButton3_Click(object sender, EventArgs e)
+        {
+            frm_about fm = new frm_about();
+            open_form(fm);
+        }
+
 
         //toggle menu drawer click
         private void btnToggleDrawer_Click(object sender, EventArgs e)

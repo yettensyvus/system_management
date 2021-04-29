@@ -45,6 +45,7 @@ namespace dashboard
             this.GunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
             this.btnExportExcel = new Bunifu.Framework.UI.BunifuImageButton();
             this.gunaVScrollBar1 = new Guna.UI.WinForms.GunaVScrollBar();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExportExcel)).BeginInit();
             this.SuspendLayout();
@@ -126,7 +127,7 @@ namespace dashboard
             this.grid.RowHeadersVisible = false;
             this.grid.RowTemplate.Height = 40;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid.Size = new System.Drawing.Size(691, 304);
+            this.grid.Size = new System.Drawing.Size(691, 293);
             this.grid.TabIndex = 56;
             this.grid.TabStop = false;
             this.grid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Dark;
@@ -255,11 +256,23 @@ namespace dashboard
             this.gunaVScrollBar1.Name = "gunaVScrollBar1";
             this.gunaVScrollBar1.Radius = 0;
             this.gunaVScrollBar1.ScrollIdleColor = System.Drawing.Color.DarkGray;
-            this.gunaVScrollBar1.Size = new System.Drawing.Size(10, 305);
+            this.gunaVScrollBar1.Size = new System.Drawing.Size(10, 292);
             this.gunaVScrollBar1.TabIndex = 58;
             this.gunaVScrollBar1.ThumbColor = System.Drawing.Color.DimGray;
             this.gunaVScrollBar1.ThumbHoverColor = System.Drawing.Color.Gray;
             this.gunaVScrollBar1.ThumbPressedColor = System.Drawing.Color.DarkGray;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
+            this.label1.Location = new System.Drawing.Point(12, 432);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 66;
+            this.label1.Text = "RECORDS:";
             // 
             // frm_peoples
             // 
@@ -267,6 +280,7 @@ namespace dashboard
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(715, 452);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExportExcel);
             this.Controls.Add(this.GunaTextBox1);
             this.Controls.Add(this.GunaButton1);
@@ -281,6 +295,7 @@ namespace dashboard
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExportExcel)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -297,5 +312,6 @@ namespace dashboard
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Label label1;
     }
 }

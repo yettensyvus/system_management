@@ -252,6 +252,7 @@ namespace dashboard
             this.gunaAdvenceButton3.Size = new System.Drawing.Size(200, 49);
             this.gunaAdvenceButton3.TabIndex = 14;
             this.gunaAdvenceButton3.Text = "About";
+            this.gunaAdvenceButton3.Click += new System.EventHandler(this.gunaAdvenceButton3_Click);
             // 
             // gunaAdvenceButton2
             // 
@@ -328,6 +329,7 @@ namespace dashboard
             this.gunaAdvenceButton1.Size = new System.Drawing.Size(200, 49);
             this.gunaAdvenceButton1.TabIndex = 12;
             this.gunaAdvenceButton1.Text = "Management";
+            this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
             // 
             // panelLogo
             // 

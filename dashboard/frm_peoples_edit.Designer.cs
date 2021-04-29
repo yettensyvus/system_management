@@ -36,7 +36,7 @@ namespace dashboard
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(745, 388);
+            this.ClientSize = new System.Drawing.Size(742, 388);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_peoples_edit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

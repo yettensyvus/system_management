@@ -108,6 +108,12 @@
     <Compile Include="authentication\frm_register.Designer.cs">
       <DependentUpon>frm_register.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_about.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_about.Designer.cs">
+      <DependentUpon>frm_about.cs</DependentUpon>
+    </Compile>
     <Compile Include="user_data\frm_user_info.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="authentication\frm_register.resx">
       <DependentUpon>frm_register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_about.resx">
+      <DependentUpon>frm_about.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_data\frm_user_info.resx">
       <DependentUpon>frm_user_info.cs</DependentUpon>
