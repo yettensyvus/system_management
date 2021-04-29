@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using dashboard.Class;
 
 namespace dashboard
 {
@@ -123,6 +124,14 @@ namespace dashboard
 
         private void frm_database_Load(object sender, EventArgs e)
         {
+            this.DoubleBuffered = true;
+            DoubleBuffering.SetDoubleBuffering(label_form_name, true);
+            DoubleBuffering.SetDoubleBuffering(pnlHeader, true);
+            DoubleBuffering.SetDoubleBuffering(btnClose, true);
+            DoubleBuffering.SetDoubleBuffering(btnServerList, true);
+            DoubleBuffering.SetDoubleBuffering(btnBrowse, true);
+            DoubleBuffering.SetDoubleBuffering(btnAccess, true);
+
             btnServerList.Clear();
             btnServerList.AddItem(Environment.MachineName);
             btnServerList.AddItem(@".\SQLEXPRESS");

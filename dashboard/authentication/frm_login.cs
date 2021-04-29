@@ -15,11 +15,28 @@ namespace dashboard
         public frm_login()
         {
             InitializeComponent();
-            lbForgot.Hide();
         }
         #endregion
 
         #region control_events
+
+        private void frm_login_Load(object sender, EventArgs e)
+        {
+            this.DoubleBuffered = true;
+            DoubleBuffering.SetDoubleBuffering(panel1, true);
+            DoubleBuffering.SetDoubleBuffering(picLogo, true);
+            DoubleBuffering.SetDoubleBuffering(txtName, true);
+            DoubleBuffering.SetDoubleBuffering(txtPassword, true);
+            DoubleBuffering.SetDoubleBuffering(label_auth, true);
+            DoubleBuffering.SetDoubleBuffering(lbForgot, true);
+            DoubleBuffering.SetDoubleBuffering(btnDatabase, true);
+            DoubleBuffering.SetDoubleBuffering(btnExit, true);
+            DoubleBuffering.SetDoubleBuffering(btnLogin, true);
+            DoubleBuffering.SetDoubleBuffering(btnRegister, true);
+            DoubleBuffering.SetDoubleBuffering(pictureBox1, true);
+            lbForgot.Hide();
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtName.Text.Length == 0)
@@ -110,5 +127,7 @@ namespace dashboard
         }
 
         #endregion
+
+      
     }
 }

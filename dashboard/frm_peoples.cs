@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dashboard.Class;
 
 
 
@@ -18,6 +19,7 @@ namespace dashboard
         public frm_peoples()
         {
             InitializeComponent();
+            DoubleBuffering.SetDoubleBuffering(this, true);
         }
 
 

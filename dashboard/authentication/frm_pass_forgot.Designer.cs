@@ -320,6 +320,7 @@ namespace dashboard
             this.Name = "frm_pass_forgot";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_pass_forgot";
+            this.Load += new System.EventHandler(this.frm_pass_forgot_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();

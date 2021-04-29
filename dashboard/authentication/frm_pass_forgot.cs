@@ -21,6 +21,20 @@ namespace dashboard
         #endregion
 
         #region control_events
+
+        private void frm_pass_forgot_Load(object sender, EventArgs e)
+        {
+            this.DoubleBuffered = true;
+            DoubleBuffering.SetDoubleBuffering(label_form_name, true);
+            DoubleBuffering.SetDoubleBuffering(pnlHeader, true);
+            DoubleBuffering.SetDoubleBuffering(btnClose, true);
+            DoubleBuffering.SetDoubleBuffering(label2, true);
+            DoubleBuffering.SetDoubleBuffering(label3, true);
+            DoubleBuffering.SetDoubleBuffering(txtName, true);
+            DoubleBuffering.SetDoubleBuffering(txtSecretW, true);
+            DoubleBuffering.SetDoubleBuffering(btnRestore, true);
+        }
+
         private void btnRestore_Click(object sender, EventArgs e)
         {
             if (txtName.Text.Length == 0)
@@ -90,5 +104,6 @@ namespace dashboard
 
         #endregion
 
+        
     }
 }

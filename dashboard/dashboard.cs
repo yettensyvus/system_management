@@ -11,12 +11,14 @@ using dashboard.Class;
 
 namespace dashboard
 {
+
+
     public partial class dashboard : Form
     {
         public dashboard()
         {
             InitializeComponent();
-            this.DoubleBuffered = true;
+            DoubleBuffered = true;
         }
 
 

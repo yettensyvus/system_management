@@ -427,6 +427,7 @@ namespace dashboard
             this.Name = "frm_register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_register";
+            this.Load += new System.EventHandler(this.frm_register_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
