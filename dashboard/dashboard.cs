@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dashboard.Class;
+using dashboard.custom_controls;
 
 namespace dashboard
 {
@@ -18,9 +19,8 @@ namespace dashboard
         public dashboard()
         {
             InitializeComponent();
-            DoubleBuffered = true;
+            this.DoubleBuffered = true;
         }
-
 
         #region methodes
 

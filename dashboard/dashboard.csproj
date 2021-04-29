@@ -91,6 +91,12 @@
     <Compile Include="Class\AesCrypt.cs" />
     <Compile Include="Class\DBConnection.cs" />
     <Compile Include="Class\DoubleBuffering.cs" />
+    <Compile Include="custom_controls\frm_alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="custom_controls\frm_alert.Designer.cs">
+      <DependentUpon>frm_alert.cs</DependentUpon>
+    </Compile>
     <Compile Include="database\frm_database.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="custom_controls\frm_alert.resx">
+      <DependentUpon>frm_alert.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="database\frm_database.resx">
       <DependentUpon>frm_database.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +200,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -216,6 +226,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checkmark_28px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error_28px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info_28px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Multiply_18px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning_28px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

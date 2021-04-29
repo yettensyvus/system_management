@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using dashboard.Class;
+using dashboard.custom_controls;
 using Microsoft.VisualBasic;
 
 namespace dashboard
@@ -16,6 +17,13 @@ namespace dashboard
         {
             InitializeComponent();
         }
+
+        public void Alert(string msg, frm_alert.alertTypeEnum type)
+        {
+            frm_alert f = new frm_alert();
+            f.setAlert(msg, type);
+        }
+
         #endregion
 
         #region control_events
@@ -41,13 +49,13 @@ namespace dashboard
         {
             if (txtName.Text.Length == 0)
             {
-                Bunifu.Snackbar.Show(this, "Please Enter Username", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Warning);
+                this.Alert("Please Enter Username", frm_alert.alertTypeEnum.Warning);
                 txtName.Focus();
                 return;
             }
             if (txtPassword.Text.Length == 0)
             {
-                Bunifu.Snackbar.Show(this, "Please Enter Password", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Warning);
+                this.Alert("Please Enter Password", frm_alert.alertTypeEnum.Warning);
                 txtPassword.Focus();
                 return;
             }
@@ -69,7 +77,7 @@ namespace dashboard
                 }
                 else
                 {
-                    Bunifu.Snackbar.Show(this, "Check your username and password", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Error);
+                    this.Alert("Check your username and password", frm_alert.alertTypeEnum.Error);
                     lbForgot.Show();
                 }
                 conn.ConnectionClose();
