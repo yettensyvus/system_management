@@ -35,17 +35,12 @@ namespace dashboard
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_peoples));
             this.grid = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.GunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
-            this.GunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
-            this.btnExportExcel = new Bunifu.Framework.UI.BunifuImageButton();
             this.gunaVScrollBar1 = new Guna.UI.WinForms.GunaVScrollBar();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnExportExcel = new Bunifu.Framework.UI.BunifuImageButton();
+            this.GunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.GunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExportExcel)).BeginInit();
             this.SuspendLayout();
@@ -77,12 +72,6 @@ namespace dashboard
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grid.ColumnHeadersHeight = 40;
-            this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
             this.grid.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
             this.grid.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.grid.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.White;
@@ -134,64 +123,6 @@ namespace dashboard
             this.grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellContentClick);
             this.grid.Resize += new System.EventHandler(this.grid_Resize);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // GunaButton1
-            // 
-            this.GunaButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.GunaButton1.AnimationHoverSpeed = 0.07F;
-            this.GunaButton1.AnimationSpeed = 0.03F;
-            this.GunaButton1.BackColor = System.Drawing.Color.Transparent;
-            this.GunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.GunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.GunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.GunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.GunaButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.GunaButton1.ForeColor = System.Drawing.Color.DarkGray;
-            this.GunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("GunaButton1.Image")));
-            this.GunaButton1.ImageSize = new System.Drawing.Size(12, 12);
-            this.GunaButton1.Location = new System.Drawing.Point(552, 100);
-            this.GunaButton1.Name = "GunaButton1";
-            this.GunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.GunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.GunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.GunaButton1.OnHoverImage = null;
-            this.GunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.GunaButton1.Radius = 3;
-            this.GunaButton1.Size = new System.Drawing.Size(133, 30);
-            this.GunaButton1.TabIndex = 6;
-            this.GunaButton1.Text = "CREATE ASSET";
-            this.GunaButton1.Click += new System.EventHandler(this.GunaButton1_Click);
-            // 
             // GunaTextBox1
             // 
             this.GunaTextBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
@@ -210,42 +141,6 @@ namespace dashboard
             this.GunaTextBox1.Size = new System.Drawing.Size(217, 30);
             this.GunaTextBox1.TabIndex = 2;
             this.GunaTextBox1.Text = "SEARCH ASSETS";
-            // 
-            // GunaCircleButton1
-            // 
-            this.GunaCircleButton1.AnimationHoverSpeed = 0.07F;
-            this.GunaCircleButton1.AnimationSpeed = 0.03F;
-            this.GunaCircleButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
-            this.GunaCircleButton1.BorderColor = System.Drawing.Color.Black;
-            this.GunaCircleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.GunaCircleButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.GunaCircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GunaCircleButton1.ForeColor = System.Drawing.Color.White;
-            this.GunaCircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("GunaCircleButton1.Image")));
-            this.GunaCircleButton1.ImageSize = new System.Drawing.Size(16, 16);
-            this.GunaCircleButton1.Location = new System.Drawing.Point(235, 100);
-            this.GunaCircleButton1.Name = "GunaCircleButton1";
-            this.GunaCircleButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.GunaCircleButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.GunaCircleButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.GunaCircleButton1.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("GunaCircleButton1.OnHoverImage")));
-            this.GunaCircleButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.GunaCircleButton1.Size = new System.Drawing.Size(30, 30);
-            this.GunaCircleButton1.TabIndex = 1;
-            // 
-            // btnExportExcel
-            // 
-            this.btnExportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExportExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExportExcel.Image")));
-            this.btnExportExcel.ImageActive = null;
-            this.btnExportExcel.Location = new System.Drawing.Point(515, 100);
-            this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(31, 30);
-            this.btnExportExcel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExportExcel.TabIndex = 65;
-            this.btnExportExcel.TabStop = false;
-            this.btnExportExcel.Zoom = 10;
             // 
             // gunaVScrollBar1
             // 
@@ -273,6 +168,69 @@ namespace dashboard
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 66;
             this.label1.Text = "RECORDS:";
+            // 
+            // btnExportExcel
+            // 
+            this.btnExportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportExcel.Image = global::dashboard.Properties.Resources.microsoft_excel_96px;
+            this.btnExportExcel.ImageActive = null;
+            this.btnExportExcel.Location = new System.Drawing.Point(515, 100);
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.Size = new System.Drawing.Size(31, 30);
+            this.btnExportExcel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExportExcel.TabIndex = 65;
+            this.btnExportExcel.TabStop = false;
+            this.btnExportExcel.Zoom = 10;
+            // 
+            // GunaButton1
+            // 
+            this.GunaButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GunaButton1.AnimationHoverSpeed = 0.07F;
+            this.GunaButton1.AnimationSpeed = 0.03F;
+            this.GunaButton1.BackColor = System.Drawing.Color.Transparent;
+            this.GunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.GunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.GunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.GunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.GunaButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.GunaButton1.ForeColor = System.Drawing.Color.DarkGray;
+            this.GunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("GunaButton1.Image")));
+            this.GunaButton1.ImageSize = new System.Drawing.Size(12, 12);
+            this.GunaButton1.Location = new System.Drawing.Point(552, 100);
+            this.GunaButton1.Name = "GunaButton1";
+            this.GunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.GunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.GunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.GunaButton1.OnHoverImage = null;
+            this.GunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.GunaButton1.Radius = 3;
+            this.GunaButton1.Size = new System.Drawing.Size(133, 30);
+            this.GunaButton1.TabIndex = 6;
+            this.GunaButton1.Text = "CREATE ASSET";
+            // 
+            // GunaCircleButton1
+            // 
+            this.GunaCircleButton1.AnimationHoverSpeed = 0.07F;
+            this.GunaCircleButton1.AnimationSpeed = 0.03F;
+            this.GunaCircleButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
+            this.GunaCircleButton1.BorderColor = System.Drawing.Color.Black;
+            this.GunaCircleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.GunaCircleButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.GunaCircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GunaCircleButton1.ForeColor = System.Drawing.Color.White;
+            this.GunaCircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("GunaCircleButton1.Image")));
+            this.GunaCircleButton1.ImageSize = new System.Drawing.Size(16, 16);
+            this.GunaCircleButton1.Location = new System.Drawing.Point(235, 100);
+            this.GunaCircleButton1.Name = "GunaCircleButton1";
+            this.GunaCircleButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.GunaCircleButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.GunaCircleButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.GunaCircleButton1.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("GunaCircleButton1.OnHoverImage")));
+            this.GunaCircleButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.GunaCircleButton1.Size = new System.Drawing.Size(30, 30);
+            this.GunaCircleButton1.TabIndex = 1;
             // 
             // frm_peoples
             // 
@@ -307,11 +265,6 @@ namespace dashboard
         internal Guna.UI.WinForms.GunaCircleButton GunaCircleButton1;
         private Bunifu.Framework.UI.BunifuImageButton btnExportExcel;
         private Guna.UI.WinForms.GunaVScrollBar gunaVScrollBar1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Label label1;
     }
 }

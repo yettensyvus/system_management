@@ -117,10 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ex elit, sagittis egestas orci id, bibendum varius nulla. Donec fringilla neque vel velit lobortis vulputate. Cras elementum consectetur sapien, vitae faucibus diam lobortis nec. Aenean suscipit gravida leo in ornare. Vivamus lacus odio, consectetur at sem et, convallis scelerisque diam. Cras a finibus est. Nunc scelerisque lacus eget massa tristique dictum. Morbi convallis eros nulla, id viverra ex sollicitudin et. Ut interdum augue vitae ante facilisis accumsan. Donec tempus elementum nulla, nec vulputate justo imperdiet eu. Phasellus porttitor mauris a vestibulum placerat. Pellentesque vitae turpis lectus. Aliquam euismod, ligula placerat vehicula placerat, massa metus commodo odio, sed rhoncus urna enim non sem.
-
-Nulla luctus mi tempus bibendum lobortis. Fusce pretium bibendum volutpat. Nullam sapien nibh, facilisis id scelerisque vel, sagittis sit amet enim. Pellentesque risus diam, vulputate id ante et, congue vulputate justo. Vestibulum porttitor, turpis nec volutpat mattis, velit orci feugiat orci, accumsan dictum lectus leo eu purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur porta a est vitae ullamcorper. Integer eros dolor, malesuada nec felis et, tristique convallis urna. Sed lobortis mauris nec scelerisque consequat. Vivamus vitae efficitur orci, a efficitur metus. Aliquam non mi vitae mauris efficitur tincidunt consectetur sit amet ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed sagittis, ligula a condimentum elementum, augue turpis vehicula nibh, sit amet sagittis felis mi posuere est. Sed egestas convallis lectus, ut bibendum odio pellentesque non. Vivamus malesuada tempus massa. Curabitur nibh nunc, posuere eu diam eu, venenatis luctus velit.
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="GunaButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAEJJREFUKFNj
+        GBjw////dBCGcgkDoOJqEIZyCQOiNICcAFMIxLuhGMbHdB5IEEkBYQ3IAKYQyiUMyNFAWrBSETAwAAAW
+        9GGBom8PcQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="GunaCircleButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAUNJREFUOE+t
+        kk0rBWEYhoeyYUFY2tDJyk9QNpSyslL+g53yB85OWUl2bBSxkYg62SKzMKXmjPlqmpqFpY06Psb16maa
+        ZhQdV909PffzvM/7MWP9K2maDodhuBEEwSPK0Stq+b4/o5afobGBYgZExBXiLHGReEh8Q6tqrWLbdh8N
+        9+jUcZwB2d/gLyFzmnlZZdhlmeKT67ojsipQ30ZXSstQ2OGeR0prMe9A33scx0OyCigcc4pNpbVQn6Qv
+        b7fb47IKmL5F8VxpLQxYoKeTZVm/rIIoiuYovqApWSXyPO9hwAUbnciqwuIzGlxiQ9Yn+kLr1DoMmZZd
+        heIgjS30jHbJ14hN9CDP/Fi3tY/4BUftZaH5pAfseEM0A5tJkkwQL1GOf+d53qiW/B7zeF0PMddE12YI
+        2pf9N8wQTrCHxmR1g2V9ABkPGRPt1PNwAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="GunaCircleButton1.OnHoverImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAARFJREFUOE+t
+        0j9LQlEcxvFb0GJDkY4thjj5EgQXBcGpKeg9uAW9AbegKcQtlyDRRUQxCNeKFgchcNDdsUXoj7fvT568
+        XM4VEnvgM5znd8656tX71/i+f4RrzGD5wiNy2rI+bEphignKyOMUTXzjQlvdMNzDCF3sq16F7gz2aYqq
+        wmFwjnfEVTlhVsOTluEwuEVLy8gwz2GBQ1VBKNu40TIyzNOwJFUFoayir2VkmJfwgZiqIJQFfCKjKhT6
+        HTygo8oNwx7ekFK1DGt7Q1ewp2dVu2F4APvTzFHHJSoYq7O8wv0Rf8NwF/ZKG3iBXWiXnGAAyxAJHfl7
+        OBTD1pfY13y2G8i96s3CQbvkDseqtonn/QD40z1VhZSgrwAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>

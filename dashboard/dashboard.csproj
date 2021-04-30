@@ -53,6 +53,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>D:\frameworks\Bunifu_UI\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
       <HintPath>D:\frameworks\Bunifu_UI\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
@@ -69,9 +72,6 @@
       <HintPath>D:\frameworks\Guna\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Snackbar">
-      <HintPath>D:\frameworks\Snackbar.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -91,11 +91,36 @@
     <Compile Include="Class\AesCrypt.cs" />
     <Compile Include="Class\DBConnection.cs" />
     <Compile Include="Class\DoubleBuffering.cs" />
+    <Compile Include="custom_controls\CustomMessageBox.cs" />
     <Compile Include="custom_controls\frm_alert.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="custom_controls\frm_alert.Designer.cs">
       <DependentUpon>frm_alert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="custom_controls\frm_MessageError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="custom_controls\frm_MessageError.Designer.cs">
+      <DependentUpon>frm_MessageError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="custom_controls\frm_MessageOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="custom_controls\frm_MessageOK.Designer.cs">
+      <DependentUpon>frm_MessageOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="custom_controls\frm_MessageOKCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="custom_controls\frm_MessageOKCancel.Designer.cs">
+      <DependentUpon>frm_MessageOKCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="custom_controls\frm_MessageYesNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="custom_controls\frm_MessageYesNo.Designer.cs">
+      <DependentUpon>frm_MessageYesNo.cs</DependentUpon>
     </Compile>
     <Compile Include="database\frm_database.cs">
       <SubType>Form</SubType>
@@ -121,10 +146,10 @@
     <Compile Include="frm_about.Designer.cs">
       <DependentUpon>frm_about.cs</DependentUpon>
     </Compile>
-    <Compile Include="user_data\frm_user_info.cs">
+    <Compile Include="frm_user_info.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="user_data\frm_user_info.Designer.cs">
+    <Compile Include="frm_user_info.Designer.cs">
       <DependentUpon>frm_user_info.cs</DependentUpon>
     </Compile>
     <Compile Include="dashboard.cs">
@@ -139,17 +164,17 @@
     <Compile Include="authentication\frm_login.Designer.cs">
       <DependentUpon>frm_login.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_peoples.cs">
+    <Compile Include="peoples_CRUD\frm_peoples.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_peoples.Designer.cs">
+    <Compile Include="peoples_CRUD\frm_peoples.Designer.cs">
       <DependentUpon>frm_peoples.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_peoples_edit.cs">
+    <Compile Include="peoples_CRUD\frm_peoples_upd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_peoples_edit.Designer.cs">
-      <DependentUpon>frm_peoples_edit.cs</DependentUpon>
+    <Compile Include="peoples_CRUD\frm_peoples_upd.Designer.cs">
+      <DependentUpon>frm_peoples_upd.cs</DependentUpon>
     </Compile>
     <Compile Include="authentication\frm_your_password.cs">
       <SubType>Form</SubType>
@@ -161,6 +186,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="custom_controls\frm_alert.resx">
       <DependentUpon>frm_alert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="custom_controls\frm_MessageError.resx">
+      <DependentUpon>frm_MessageError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="custom_controls\frm_MessageOK.resx">
+      <DependentUpon>frm_MessageOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="custom_controls\frm_MessageOKCancel.resx">
+      <DependentUpon>frm_MessageOKCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="custom_controls\frm_MessageYesNo.resx">
+      <DependentUpon>frm_MessageYesNo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="database\frm_database.resx">
       <DependentUpon>frm_database.cs</DependentUpon>
@@ -174,7 +211,7 @@
     <EmbeddedResource Include="frm_about.resx">
       <DependentUpon>frm_about.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="user_data\frm_user_info.resx">
+    <EmbeddedResource Include="frm_user_info.resx">
       <DependentUpon>frm_user_info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dashboard.resx">
@@ -183,29 +220,30 @@
     <EmbeddedResource Include="authentication\frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_peoples.resx">
+    <EmbeddedResource Include="peoples_CRUD\frm_peoples.resx">
       <DependentUpon>frm_peoples.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_peoples_edit.resx">
-      <DependentUpon>frm_peoples_edit.cs</DependentUpon>
+    <EmbeddedResource Include="peoples_CRUD\frm_peoples_upd.resx">
+      <DependentUpon>frm_peoples_upd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="authentication\frm_your_password.resx">
       <DependentUpon>frm_your_password.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -241,6 +279,72 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Warning_28px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database_import_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\management_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full_screen_31px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_button_31px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_window_33px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microsoft_excel_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question_mark_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box_important_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error_96px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

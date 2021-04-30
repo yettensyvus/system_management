@@ -70,7 +70,7 @@ namespace dashboard
                     }
                 }
 
-                Bunifu.Snackbar.Show(this, "SUCCESS!", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Success);
+                //Bunifu.Snackbar.Show(this, "SUCCESS!", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Success);
 
                 conn.Close();
             }
@@ -108,7 +108,7 @@ namespace dashboard
                     }
                 }
 
-                Bunifu.Snackbar.Show(this, "SUCCESS!", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Success);
+                //Bunifu.Snackbar.Show(this, "SUCCESS!", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Success);
 
                 conn.Close();
             }

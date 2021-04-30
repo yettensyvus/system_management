@@ -1,4 +1,5 @@
 ﻿using dashboard.Class;
+using dashboard.custom_controls;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -36,18 +37,24 @@ namespace dashboard
             DoubleBuffering.SetDoubleBuffering(pictureBox1, true);
         }
 
+        public void Alert(string msg, frm_alert.alertTypeEnum type)
+        {
+            frm_alert f = new frm_alert();
+            f.setAlert(msg, type);
+        }
+
         private void btnRegister_Click(object sender, EventArgs e)
         {
 
             if (txtUsername.Text.Length == 0)
             {
-                Bunifu.Snackbar.Show(this, "Please Enter Username", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Warning);
+                this.Alert("Please Enter Username", frm_alert.alertTypeEnum.Warning);
                 txtUsername.Focus();
                 return;
             }
             else if (txtUsername.Text.Length < 5)
             {
-                Bunifu.Snackbar.Show(this, "Minimum 5 Characters Long", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Warning);
+                this.Alert("Minimum 5 Characters Long", frm_alert.alertTypeEnum.Info);
                 txtUsername.Focus();
                 return;
             }
@@ -55,13 +62,13 @@ namespace dashboard
 
             if (txtPassword.Text.Length == 0)
             {
-                Bunifu.Snackbar.Show(this, "Please Enter Password", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Warning);
+                this.Alert("Please Enter Password", frm_alert.alertTypeEnum.Warning);
                 txtPassword.Focus();
                 return;
             }
             else if (txtPassword.Text.Length < 5)
             {
-                Bunifu.Snackbar.Show(this, "Minimum 5 Characters Long", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Warning);
+                this.Alert("Minimum 5 Characters Long", frm_alert.alertTypeEnum.Info);
                 txtPassword.Focus();
                 return;
             }
@@ -69,13 +76,13 @@ namespace dashboard
 
             if (txtSecretW.Text.Length == 0)
             {
-                Bunifu.Snackbar.Show(this, "Please Enter Secret Word", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Warning);
+                this.Alert("Please Enter Secret Word", frm_alert.alertTypeEnum.Warning);
                 txtSecretW.Focus();
                 return;
             }
             else if (txtSecretW.Text.Length < 5)
             {
-                Bunifu.Snackbar.Show(this, "Minimum 5 Characters Long", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Warning);
+                this.Alert("Minimum 5 Characters Long", frm_alert.alertTypeEnum.Info);
                 txtSecretW.Focus();
                 return;
             }
@@ -91,7 +98,7 @@ namespace dashboard
                 reader.Close();
                 conn.ConnectionClose();
 
-                Bunifu.Snackbar.Show(this, "SUCCESS!", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Success);
+                this.Alert("SUCCESS!", frm_alert.alertTypeEnum.Success);
             }
             catch (Exception ex)
             {

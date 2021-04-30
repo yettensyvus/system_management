@@ -117,10 +117,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ex elit, sagittis egestas orci id, bibendum varius nulla. Donec fringilla neque vel velit lobortis vulputate. Cras elementum consectetur sapien, vitae faucibus diam lobortis nec. Aenean suscipit gravida leo in ornare. Vivamus lacus odio, consectetur at sem et, convallis scelerisque diam. Cras a finibus est. Nunc scelerisque lacus eget massa tristique dictum. Morbi convallis eros nulla, id viverra ex sollicitudin et. Ut interdum augue vitae ante facilisis accumsan. Donec tempus elementum nulla, nec vulputate justo imperdiet eu. Phasellus porttitor mauris a vestibulum placerat. Pellentesque vitae turpis lectus. Aliquam euismod, ligula placerat vehicula placerat, massa metus commodo odio, sed rhoncus urna enim non sem.
-
-Nulla luctus mi tempus bibendum lobortis. Fusce pretium bibendum volutpat. Nullam sapien nibh, facilisis id scelerisque vel, sagittis sit amet enim. Pellentesque risus diam, vulputate id ante et, congue vulputate justo. Vestibulum porttitor, turpis nec volutpat mattis, velit orci feugiat orci, accumsan dictum lectus leo eu purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur porta a est vitae ullamcorper. Integer eros dolor, malesuada nec felis et, tristique convallis urna. Sed lobortis mauris nec scelerisque consequat. Vivamus vitae efficitur orci, a efficitur metus. Aliquam non mi vitae mauris efficitur tincidunt consectetur sit amet ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed sagittis, ligula a condimentum elementum, augue turpis vehicula nibh, sit amet sagittis felis mi posuere est. Sed egestas convallis lectus, ut bibendum odio pellentesque non. Vivamus malesuada tempus massa. Curabitur nibh nunc, posuere eu diam eu, venenatis luctus velit.
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="icon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABGdBTUEAALGPC/xhBQAABdlJREFUeF7t
+        21uoVFUcx/GjGSqlFIpmWRYIaUFCZDcyKLs8FBWED12ozC4UVhAEXQSLbg/1UhhRYQVR9GYPhT1U9BBF
+        RNJNut+jyOhqaffT9z/7dx72/NfaM9s9R9tz/h/4gaz132vO+p85zszee0ZCCCGEEEIIIYQQQvi/GB0d
+        3Z0sJVeQB8gL5AvyQ1c+J88Tq7FaO2aKlgl10LjdyBnkCfIj2VHfkQfJMi0dqtCoaeRaYs/mQXuTrCTx
+        V5FCY84h49H4bh+RFXrYQDMOJM9ZZ3ayDWSOfoyJiQacSr63buwiX5Fj9ONMLGz8YvK3daEPv5ON5EZi
+        v7RDyCyyt2L/PpTY3E3kWWLH9OMPcrZ+rImBDV9J/rXd9/AauYjM0KF945iZxH7Jm0gv9kQ4V4cONzZ6
+        FvnHdl3BGn+SDmmMtewx37eFK9hfwnIdMpzY4EKy1XabYc/ENWTgbxVZcyq5VY+RYx/o9tchw4WN2Yer
+        l22XGfaBa9yfgTzGKeQXe8AM+zQ9SeXDg01d1tle2hayRKXjjsc6llT9Es5X6XBgQ3uSbztb834jR6o0
+        i5o9yHnkfvIK+ZSMnQeyf9tf133EambqsCxqTiZ/khQ71zRNpe3HZuzkWM5VKktifh9yL6l6xnbbTh4m
+        +2mZJObt9SZnpcraj83YeZiUV8lklTnMrSK/WuEOsmMv1HIOc1PI21aY8LrK2o2N2DufnBNU5jB3e1Ey
+        ELdpWYe504uSpINU1l5s4ppiL85bKnGYu7QoGahVWr6E8cnkw06Ft1pl7cUmHiv24qxVSQnjc8i2TsVg
+        2Yv9bD1MCeN3diq8R1XSXmzijWIvzokqKWH8lmI66S/yJFlBFpCxc0F2RtXGbM5qcnK/dDuHlNL+1wE2
+        kXv7OU8lJYznPqxtJotVlkXNIvKeHZDwkspKGJ9fTDvfqKS92ETurORUlZQwbpcRUw5WSU/U2i8hZYtK
+        ShifXkw721TSXtqIo2lH046m+0L5jOIoZ6tKShi3S6Ep21XSXtqIo2lH046m+0L5UcVRzgcqKWF8XjHt
+        fK2S9tJGHE07mnY03RfK7ymOcjaqpITxI4ppZ7NK2ksbaUzL9UTpYpJ73blaZSWMX15MO0+rpL20kca0
+        XCXK9iK5t7329nSBSksYt7evKTerpL20kca0XBYldgnSzi3lrFdpCeN2XO6D32kqay9tpDEtl8T0bFJ1
+        sedncoDKSxi/oVPh2THTVdZexV6a03IOU/ae3262qpK8wML4XJK7LeYRlbWbNtOYlitheDnpde/oHSov
+        YXwSeaZTkXa0SkMKDbqE9LqvqOo0dO4EnNmgspBCg1aTXre2rCPJi+uMX0dy9yXZZcrDVBq60Zyqy4jG
+        GruWuObbGLmbVFmj8tCN5uQu7oyxZ2/yEiTjdr7ncSuq8CKJ29dTaIyds6/6b+cnkrybjnG7sG93UlT5
+        mCQv2Ex4NGZfkjtNbb4kyf+3GV9C7DaTKp+QhTokdKM5uVMF5l0yX6UljNtdcPaBqso7pPL2lQmN5hzf
+        aVOa3d+f+4RrX0fK3Xg1xk5dzNIhIYUGPdVplWd3My9VWQnjF5Bet7+vJ8mrckFokL145p7Fd6mshHH7
+        8obdGZdjL+TXk+G7AXfQaJI9k1PsHY/70gZj9j7f3krm2FnPM1UeeqFZD3Xa5q1TSQnjy4rpJLuJ9ziV
+        hn7QMPumzCDYjb2Ha9nQL5pmbzEHofIO7JBB4z4r+tfYXC0Z6qBxubvq6qr9LcsAGlfnSxlVhufbLjsT
+        jau60baO7JdAQgghhBBC6KK3kI1puVCX+teYlgt1qX+NablQl/rXmJYLdal/jWm5UJf615iWC3Wpf46m
+        HU07mg51qX+Oph1NO5oOdal/jqYdTTuaDnWpf46mHU07mg51qX+Oph1NO5oOdal/jqYdTTuaDnWpf41p
+        uVCX+teYlgt1qX+NablQl/rXmJYLdal/jWm5UJf615iWCyGEEEIIIYQQQghhFxoZ+Q8/WS219A7ajQAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="DragForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="btnNo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHIAAAAoCAYAAAAiyK7sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADhSURBVHhe7dyxDcJAEADBL4VSqICW7H6ISSnFDRBRATzW
+        RhYFsGhP2uT+ssl/NH80y7Kc1nW9zl6l6vaxg3GMubgfDsrTBuMO+e2gJMEYpD0Yg7QHY5D2YAzSHoxB
+        2oMxSHswBmkPxiDtwRikPRiDtAdjkPZgDNIejEHagzFIezAGaQ/GIO3BGKQ9GIO0B2OQ9mAM0h6MQdqD
+        MUh7MAZpD8Yg7cEYpD0Yg7QHY5D2YAzSHoxB2oMxSHswBmkPxiDtwRikPRh3yO34WJqeMO6fQZzn4nE4
+        qN/vOe0uMDb+GeMNpkZ9PTrvKDgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnYes.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHIAAAAoCAYAAAAiyK7sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADySURBVHhe7dExToQAAAVRjuJRLAx0XnMh1rYeZS9gtRVQ
+        KSRTGQ6wY+Yn0/3uDe0fbbqtL+Oyf0zL9lOm1s/TDsYDctm/pnm9ONZTN5/tdxhPyD+HUgVjkPZgDNIe
+        jEHagzFIezAGaQ/GIO3BGKQ9GIO0B2OQ9mAM0h6MQdqDMUh7MAZpD8Yg7cEYpD0Yg7QHY5D2YAzSHoxB
+        2oMxSHswBmkPxiDtwRikPRiDtAdjkPZgDNIejEHagzFIezAGaQ/GIO3BGKQ9GIO0B2OQ9mA8IOf9fnWo
+        52+ctweMB+RtfR2X7fvqWM/bifi2bO8wNv+G4ReFVT6eI4v3kgAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>

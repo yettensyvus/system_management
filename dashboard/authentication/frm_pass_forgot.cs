@@ -1,4 +1,5 @@
 ﻿using dashboard.Class;
+using dashboard.custom_controls;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -35,30 +36,36 @@ namespace dashboard
             DoubleBuffering.SetDoubleBuffering(btnRestore, true);
         }
 
+        public void Alert(string msg, frm_alert.alertTypeEnum type)
+        {
+            frm_alert f = new frm_alert();
+            f.setAlert(msg, type);
+        }
+
         private void btnRestore_Click(object sender, EventArgs e)
         {
             if (txtName.Text.Length == 0)
             {
-                Bunifu.Snackbar.Show(this, "Please Enter Username", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Warning);
+                this.Alert("Please Enter Username", frm_alert.alertTypeEnum.Warning);
                 txtName.Focus();
                 return;
             }
             else if (txtName.Text.Length < 5)
             {
-                Bunifu.Snackbar.Show(this, "Minimum 5 Characters Long", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Warning);
+                this.Alert("Minimum 5 Characters Long", frm_alert.alertTypeEnum.Info);
                 txtName.Focus();
                 return;
             }
 
             if (txtSecretW.Text.Length == 0)
             {
-                Bunifu.Snackbar.Show(this, "Please Enter Secret Word", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Warning);
+                this.Alert("Please Enter Secret Word", frm_alert.alertTypeEnum.Warning);
                 txtSecretW.Focus();
                 return;
             }
             else if (txtSecretW.Text.Length < 5)
             {
-                Bunifu.Snackbar.Show(this, "Minimum 5 Characters Long", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Warning);
+                this.Alert("Minimum 5 Characters Long", frm_alert.alertTypeEnum.Info);
                 txtSecretW.Focus();
                 return;
             }
@@ -82,7 +89,7 @@ namespace dashboard
                 }
                 else
                 {
-                    Bunifu.Snackbar.Show(this, "Invalid Credentials", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Error);
+                    this.Alert("Invalid Credentials", frm_alert.alertTypeEnum.Error);
                 }
                 conn.ConnectionClose();
             }

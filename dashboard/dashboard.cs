@@ -161,13 +161,10 @@ namespace dashboard
         //exit
         private void btnClose_Click(object sender, EventArgs e)
         {
-            
-            if (MessageBox.Show("Do you want to exit?", "Alert!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (CustomMessageBox.ShowMessage("Do you want to exit?", "Alert!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Environment.Exit(0);
             }
-            
-
         }
 
         #endregion

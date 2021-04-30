@@ -117,10 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ex elit, sagittis egestas orci id, bibendum varius nulla. Donec fringilla neque vel velit lobortis vulputate. Cras elementum consectetur sapien, vitae faucibus diam lobortis nec. Aenean suscipit gravida leo in ornare. Vivamus lacus odio, consectetur at sem et, convallis scelerisque diam. Cras a finibus est. Nunc scelerisque lacus eget massa tristique dictum. Morbi convallis eros nulla, id viverra ex sollicitudin et. Ut interdum augue vitae ante facilisis accumsan. Donec tempus elementum nulla, nec vulputate justo imperdiet eu. Phasellus porttitor mauris a vestibulum placerat. Pellentesque vitae turpis lectus. Aliquam euismod, ligula placerat vehicula placerat, massa metus commodo odio, sed rhoncus urna enim non sem.
-
-Nulla luctus mi tempus bibendum lobortis. Fusce pretium bibendum volutpat. Nullam sapien nibh, facilisis id scelerisque vel, sagittis sit amet enim. Pellentesque risus diam, vulputate id ante et, congue vulputate justo. Vestibulum porttitor, turpis nec volutpat mattis, velit orci feugiat orci, accumsan dictum lectus leo eu purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur porta a est vitae ullamcorper. Integer eros dolor, malesuada nec felis et, tristique convallis urna. Sed lobortis mauris nec scelerisque consequat. Vivamus vitae efficitur orci, a efficitur metus. Aliquam non mi vitae mauris efficitur tincidunt consectetur sit amet ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed sagittis, ligula a condimentum elementum, augue turpis vehicula nibh, sit amet sagittis felis mi posuere est. Sed egestas convallis lectus, ut bibendum odio pellentesque non. Vivamus malesuada tempus massa. Curabitur nibh nunc, posuere eu diam eu, venenatis luctus velit.
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="icon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABGdBTUEAALGPC/xhBQAAAnRJREFUeF7t
+        2ttqG0EQRVEROzb+9MRO/iLJWyCXl+TnlHOUarCFVGpZPVPj0V5QYHTt3j3CBmsDAAAAAAAAAAAAAP22
+        2+27+BFzU/wHzV/Nh7gJc3kWv3mMuzA1xd6P3zzFQzAVRT4Wv/kUD8Voinun+bnLfNwPzW08BaMo6qkr
+        375obuIpGEVRiV9FUYlfRVGJX0VRiV9FUYlfRVGJX0VRiV9FUYlfRVGJX0VRiV9FUYlfRVGJX0VRiV9F
+        UYlfRVF74n/VEH80RSV+FUUlfhVFJX4VRSV+FUUlfhVFJX4VRSV+FUVdV3wt9M1881dr7fnSlO+/i6cs
+        mxb6UfNH8xA3LZbXqFnVlf+4W/J/iz4Er02zqvhPuyW/tMhD8Jo0q4r/ebfkwxZ1CF6LZlXxbzU93/wt
+        /yXmNWhOrfWX5m38wm204BuNr5pM6SfB761Zz5W/zwuPDWRKDsHvqVlv/MYbiI1kZj0Ev5dm/fEbbyQ2
+        lJnlEPwemuuJ33hDsbHMpIfg19ZcX/zGG4sNZiY5BL+m5nrjN95gbDQz9BD8WhriN95obDgz5BD8Ghri
+        7/OGY+OZiw7Bz9UQ/xhvPAJkXnUIfo6G+Kc4QITInHUIfqyG+L0cIoJkug7Bj9EQ/1wOEmEy6SH4Pg3x
+        X8thIlDm4CH4Ng3xL+VAESrz4hD8s4b4oziU5purJXaHEEP80RTsXvPb9RL+p07PP1Pu42VxDoXr+SRk
+        uPIvpYA9n4RD/Byu/BEU8txPAlf+aA6q6TkE4k/FYTXZIfg+4k/JgSP0PuLPRaHfa767eiD+3BS8HQLx
+        qyi8/0TlT00AAAAAAAAAALBSm80/ELalj4AfMQAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="DragForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="btnOK.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAL8AAAAoCAYAAACviSv9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEPSURBVHhe7d2xTQNBGITRLYUM+WiCCmjTutuYlFJogIgK
+        8BlNZlew80Z6yeoPP116w6x6r9fry2Xuc5vHHyztOD7vvSf9Mc7Hr4cjWNT5of9O+v/xPz2CVSV98dMn
+        6YufPklf/PRJ+uKnT9IXP32Svvjpk/TFT5+kL376JH3x0yfpi58+SV/89En64qdP0hc/fZK++OmT9MVP
+        n6QvfvokffHTJ+mLnz5JX/z0Sfrip0/SFz99kr746ZP0xU+fpC9++iR98dMn6YufPklf/PRJ+uKnT9IX
+        P32Svvjpk/TFT5+kL376JH3x0yfpj3H/Tct2PD+C5Rz7b9If423O9/Px5+EIVnOGv+37R9I3a9wYNyYS
+        6lDMkOUTAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>
