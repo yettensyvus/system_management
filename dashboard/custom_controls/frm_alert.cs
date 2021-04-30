@@ -47,19 +47,19 @@ namespace dashboard.custom_controls
             switch (type)
             {
                 case frm_alert.alertTypeEnum.Success:
-                    this.GunaPictureBox1.Image = Resources.Checkmark_28px;
+                    this.GunaPictureBox1.Image = Resources.checkmark_96px;
                     this.BackColor = Color.FromArgb(42, 171, 160);
                     break;
                 case frm_alert.alertTypeEnum.Warning:
-                    this.GunaPictureBox1.Image = Resources.Warning_28px;
+                    this.GunaPictureBox1.Image = Resources.box_important_96px;
                     this.BackColor = Color.FromArgb(255, 179, 2);
                     break;
                 case frm_alert.alertTypeEnum.Error:
-                    this.GunaPictureBox1.Image = Resources.Error_28px;
+                    this.GunaPictureBox1.Image = Resources.error_96px;
                     this.BackColor = Color.FromArgb(255, 121, 70);
                     break;
                 case frm_alert.alertTypeEnum.Info:
-                    this.GunaPictureBox1.Image = Resources.Info_28px;
+                    this.GunaPictureBox1.Image = Resources.question_mark_96px;
                     this.BackColor = Color.FromArgb(71, 169, 248);
                     break;
             }

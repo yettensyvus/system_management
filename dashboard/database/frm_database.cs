@@ -5,6 +5,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using dashboard.Class;
+using dashboard.custom_controls;
 
 namespace dashboard
 {
@@ -21,7 +22,13 @@ namespace dashboard
             InitializeComponent();
         }
 
-    #endregion
+        public void Alert(string msg, frm_alert.alertTypeEnum type)
+        {
+            frm_alert f = new frm_alert();
+            f.setAlert(msg, type);
+        }
+
+        #endregion
 
         #region methodes
         public string get_path;
@@ -70,7 +77,7 @@ namespace dashboard
                     }
                 }
 
-                //Bunifu.Snackbar.Show(this, "SUCCESS!", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Success);
+                this.Alert("SUCCESS!", frm_alert.alertTypeEnum.Success);
 
                 conn.Close();
             }
@@ -108,7 +115,7 @@ namespace dashboard
                     }
                 }
 
-                //Bunifu.Snackbar.Show(this, "SUCCESS!", 3000, Snackbar.Views.SnackbarDesigner.MessageTypes.Success);
+                this.Alert("SUCCESS!", frm_alert.alertTypeEnum.Success);
 
                 conn.Close();
             }

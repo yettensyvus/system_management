@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using dashboard.Class;
 using dashboard.custom_controls;
@@ -16,11 +10,13 @@ namespace dashboard
 
     public partial class dashboard : Form
     {
+        #region main
         public dashboard()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
         }
+        #endregion
 
         #region methodes
 
@@ -92,7 +88,7 @@ namespace dashboard
 
         #endregion
 
-        #region buttons
+        #region control_events
         //buttons click events
 
         private void btnMax_Click(object sender, EventArgs e)
@@ -118,24 +114,23 @@ namespace dashboard
             open_form(fm);
         }
 
-        private void gunaAdvenceButton2_Click(object sender, EventArgs e)
-        {
-            frm_user_info fm = new frm_user_info();
-            open_form(fm);
-        }
-
-        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
+        private void btnManagement_Click(object sender, EventArgs e)
         {
             frm_peoples fm = new frm_peoples();
             open_form(fm);
         }
 
-        private void gunaAdvenceButton3_Click(object sender, EventArgs e)
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            frm_user_info fm = new frm_user_info();
+            open_form(fm);
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
         {
             frm_about fm = new frm_about();
             open_form(fm);
         }
-
 
         //toggle menu drawer click
         private void btnToggleDrawer_Click(object sender, EventArgs e)

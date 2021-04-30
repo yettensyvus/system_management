@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using dashboard.Class;
 using dashboard.custom_controls;
@@ -17,7 +12,7 @@ namespace dashboard
 
     public partial class frm_peoples : Form
     {
-
+        #region main
         DBConnection conn = new DBConnection();
 
         private Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper vScrollHelper;
@@ -27,6 +22,9 @@ namespace dashboard
             InitializeComponent();
             DoubleBuffering.SetDoubleBuffering(this, true);
         }
+        #endregion
+
+        #region methodes
         public void Alert(string msg, frm_alert.alertTypeEnum type)
         {
             frm_alert f = new frm_alert();
@@ -87,6 +85,10 @@ namespace dashboard
                 }
             };
         }
+
+        #endregion
+
+        #region control_events
 
         private void frm_peoples_Load(object sender, EventArgs e)
         {
@@ -176,6 +178,7 @@ namespace dashboard
                 }
             }
         }
+        #endregion
 
     }
 }
