@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace dashboard.Class
+namespace dashboard
 {
     class AesCrypt
     {

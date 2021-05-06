@@ -3,13 +3,14 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace dashboard.custom_controls
+namespace dashboard
 {
     public partial class frm_alert : Form
     {
         public frm_alert()
         {
             InitializeComponent();
+            TopMost = true;
         }
 
         public enum alertTypeEnum
@@ -64,8 +65,9 @@ namespace dashboard.custom_controls
                     break;
             }
             this.GunaLabel1.Text = msg;
-
+ 
             this.Show();
+            
             this.action = actionEnum.start;
             this.Timer1.Interval = 1;
             this.Timer1.Start();

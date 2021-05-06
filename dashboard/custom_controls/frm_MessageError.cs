@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace dashboard.custom_controls
+namespace dashboard
 {
     public partial class frm_MessageError : Form
     {

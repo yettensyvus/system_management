@@ -5,9 +5,9 @@ namespace dashboard
 {
     static class Program
     {
-        /// <summary>
-        /// Главная точка входа для приложения.
-        /// </summary>
+        public static string FrmState;
+        public static string UserName;
+
         [STAThread]
         static void Main()
         {

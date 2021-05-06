@@ -4,8 +4,6 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using dashboard.Class;
-using dashboard.custom_controls;
 
 namespace dashboard
 {

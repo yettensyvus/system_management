@@ -1,5 +1,4 @@
-﻿
-namespace dashboard.custom_controls
+﻿namespace dashboard
 {
     partial class frm_MessageError
     {
@@ -45,14 +44,14 @@ namespace dashboard.custom_controls
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(121)))), ((int)(((byte)(70)))));
-            this.lblTitle.Location = new System.Drawing.Point(127, 136);
+            this.lblTitle.Location = new System.Drawing.Point(12, 136);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(106, 32);
+            this.lblTitle.Size = new System.Drawing.Size(326, 32);
             this.lblTitle.TabIndex = 20;
             this.lblTitle.Text = "Oooops!";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuSeparator1
             // 
@@ -69,9 +68,9 @@ namespace dashboard.custom_controls
             // icon
             // 
             this.icon.Image = ((System.Drawing.Image)(resources.GetObject("icon.Image")));
-            this.icon.Location = new System.Drawing.Point(133, 43);
+            this.icon.Location = new System.Drawing.Point(12, 43);
             this.icon.Name = "icon";
-            this.icon.Size = new System.Drawing.Size(90, 90);
+            this.icon.Size = new System.Drawing.Size(326, 90);
             this.icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.icon.TabIndex = 19;
             this.icon.TabStop = false;
@@ -178,7 +177,6 @@ namespace dashboard.custom_controls
             this.Text = "frm_MessageError";
             ((System.ComponentModel.ISupportInitialize)(this.icon)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

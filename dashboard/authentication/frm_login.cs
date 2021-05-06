@@ -2,8 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using dashboard.Class;
-using dashboard.custom_controls;
 using Microsoft.VisualBasic;
 
 namespace dashboard
@@ -16,6 +14,8 @@ namespace dashboard
         public frm_login()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
+            lbForgot.Hide();
         }
 
         public void Alert(string msg, frm_alert.alertTypeEnum type)
@@ -27,29 +27,17 @@ namespace dashboard
         #endregion
 
         #region control_events
-
-        private void frm_login_Load(object sender, EventArgs e)
-        {
-            this.DoubleBuffered = true;
-            DoubleBuffering.SetDoubleBuffering(panel1, true);
-            DoubleBuffering.SetDoubleBuffering(picLogo, true);
-            DoubleBuffering.SetDoubleBuffering(txtName, true);
-            DoubleBuffering.SetDoubleBuffering(txtPassword, true);
-            DoubleBuffering.SetDoubleBuffering(label_auth, true);
-            DoubleBuffering.SetDoubleBuffering(lbForgot, true);
-            DoubleBuffering.SetDoubleBuffering(btnDatabase, true);
-            DoubleBuffering.SetDoubleBuffering(btnExit, true);
-            DoubleBuffering.SetDoubleBuffering(btnLogin, true);
-            DoubleBuffering.SetDoubleBuffering(btnRegister, true);
-            DoubleBuffering.SetDoubleBuffering(pictureBox1, true);
-            lbForgot.Hide();
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtName.Text.Length == 0)
             {
                 this.Alert("Please Enter Username", frm_alert.alertTypeEnum.Warning);
+                txtName.Focus();
+                return;
+            }
+            else if (txtName.Text.Length < 5)
+            {
+                this.Alert("Minimum 5 Characters Long", frm_alert.alertTypeEnum.Info);
                 txtName.Focus();
                 return;
             }
@@ -59,9 +47,16 @@ namespace dashboard
                 txtPassword.Focus();
                 return;
             }
+            else if (txtPassword.Text.Length < 5)
+            {
+                this.Alert("Minimum 5 Characters Long", frm_alert.alertTypeEnum.Info);
+                txtPassword.Focus();
+                return;
+            }
 
             try
             {
+
                 conn.ConnectionOpen();
 
                 string query = "SELECT * FROM users WHERE username = '" + txtName.Text.Trim() + "' AND password = '" + AesCrypt.Encrypt(txtPassword.Text.Trim()) + "'";
@@ -69,8 +64,20 @@ namespace dashboard
                 DataTable dtbl = new DataTable();
                 sda.Fill(dtbl);
 
-                if (dtbl.Rows.Count == 1)
+                if (dtbl.Rows.Count == 1 && txtName.Text == "admin")
                 {
+                    Program.FrmState = "Admin";
+                    Program.UserName = txtName.Text.ToString();
+
+                    this.Hide();
+                    dashboard obj = new dashboard();
+                    obj.Show();
+                }
+                else if (dtbl.Rows.Count == 1)
+                {
+                    Program.FrmState = "User";
+                    Program.UserName = txtName.Text.ToString();
+
                     this.Hide();
                     dashboard obj = new dashboard();
                     obj.Show();
@@ -81,6 +88,8 @@ namespace dashboard
                     lbForgot.Show();
                 }
                 conn.ConnectionClose();
+
+                
             }
 
             catch (Exception ex)

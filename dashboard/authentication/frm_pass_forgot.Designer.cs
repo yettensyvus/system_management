@@ -197,7 +197,7 @@ namespace dashboard
             this.txtSecretW.Size = new System.Drawing.Size(259, 35);
             this.txtSecretW.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
             this.txtSecretW.TabIndex = 126;
-            this.txtSecretW.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSecretW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSecretW.TextMarginBottom = 0;
             this.txtSecretW.TextMarginLeft = 0;
             this.txtSecretW.TextMarginTop = 0;
@@ -282,7 +282,7 @@ namespace dashboard
             this.txtName.Size = new System.Drawing.Size(259, 35);
             this.txtName.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
             this.txtName.TabIndex = 124;
-            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtName.TextMarginBottom = 0;
             this.txtName.TextMarginLeft = 0;
             this.txtName.TextMarginTop = 0;
@@ -320,7 +320,6 @@ namespace dashboard
             this.Name = "frm_pass_forgot";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_pass_forgot";
-            this.Load += new System.EventHandler(this.frm_pass_forgot_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();

@@ -3,8 +3,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-using dashboard.Class;
-using dashboard.custom_controls;
 using dashboard.Properties;
 
 namespace dashboard
@@ -58,7 +56,7 @@ namespace dashboard
             try
             {
                 conn.ConnectionOpen();
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT id_peoples AS ID, f_name AS NUME, l_name AS PRENUME, patronymic AS PATRONIMIC, date_of_birth AS DATA, idnp AS IDNP FROM peoples", conn.connection);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT id_peoples AS ID, full_name AS NUME, date_of_birth AS DATE, idnp AS IDNP FROM peoples", conn.connection);
                 DataTable data = new DataTable();
                 sda.Fill(data);
                 grid.DataSource = data;
@@ -84,6 +82,14 @@ namespace dashboard
                     dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
             };
+        }
+
+        private void copyAlltoClipboard()
+        {
+            grid.SelectAll();
+            DataObject dataObj = grid.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
         }
 
         #endregion
@@ -120,19 +126,23 @@ namespace dashboard
             if (e.ColumnIndex == 0)
             {
                 frm_peoples_edit form = new frm_peoples_edit();
+
+                int id = int.Parse(grid.CurrentRow.Cells["ID"].Value.ToString());
+
                 try
                 {
-                    string fname = grid.CurrentRow.Cells["NUME"].Value.ToString();
-                    string lname = grid.CurrentRow.Cells["PRENUME"].Value.ToString();
-                    string full_name = fname + " " + lname;
+                    string full_name = grid.CurrentRow.Cells["NUME"].Value.ToString();
 
-                    string messege = string.Format("Edit People {0}", full_name);
-                    if (MessageBox.Show(messege, "Confirm Edit", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    string message = string.Format("Edit People: {0}?", full_name);
+
+                    if (CustomMessageBox.ShowMessage(message, "Confirm Edit!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        //form.txtIDPeople.Text = grid.Rows[e.RowIndex].Cells[0].Value.ToString();
-                        //form.txtFullname.Text = grid.Rows[e.RowIndex].Cells[1].Value.ToString();
-                        //form.txtIDNP.Text = grid.Rows[e.RowIndex].Cells[2].Value.ToString();
-                        //form.ShowDialog();
+                        form.id = id;
+
+                        form.txtFullName.Text = grid.Rows[e.RowIndex].Cells["NUME"].Value.ToString();
+                        form.date_of_birth.Value = Convert.ToDateTime(grid.Rows[e.RowIndex].Cells["DATE"].Value.ToString());
+                        form.txtIDNP.Text = grid.Rows[e.RowIndex].Cells["IDNP"].Value.ToString();
+                        form.ShowDialog();
                         return;
                     }
 
@@ -149,12 +159,11 @@ namespace dashboard
 
                 try
                 {
-                    string fname = grid.CurrentRow.Cells["NUME"].Value.ToString();
-                    string lname = grid.CurrentRow.Cells["PRENUME"].Value.ToString();
-                    string full_name = fname + " " + lname;
+                    string full_name = grid.CurrentRow.Cells["NUME"].Value.ToString();
 
-                    string messege = string.Format("Remove People {0}", full_name);
-                    if (MessageBox.Show(messege, "Confirm Remove", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    string message = string.Format("Remove People: {0}?", full_name);
+
+                    if (CustomMessageBox.ShowMessage(message, "Confirm Remove!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         conn.ConnectionOpen();
                         string sqlExpression = "DELETE FROM peoples WHERE id_peoples = " + id;
@@ -178,7 +187,45 @@ namespace dashboard
                 }
             }
         }
+
+        private void txtSearch_TextChange(object sender, EventArgs e)
+        {
+            (grid.DataSource as DataTable).DefaultView.RowFilter = string.Format("NUME LIKE '%{0}%' OR IDNP LIKE '%{0}%'", txtSearch.Text);
+            label1.Text = "RECORDS: " + grid.Rows.Count.ToString();
+        }
+
+
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            copyAlltoClipboard();
+            Microsoft.Office.Interop.Excel.Application xlexcel;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            xlexcel = new Microsoft.Office.Interop.Excel.Application();
+            xlexcel.Visible = true;
+            xlWorkBook = xlexcel.Workbooks.Add(misValue);
+            xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
+            CR.Select();
+            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            all_data();
+        }
+
+
+
+
         #endregion
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frm_peoples_add form = new frm_peoples_add();
+            form.ShowDialog();
+        }
     }
 }

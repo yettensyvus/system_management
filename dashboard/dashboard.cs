@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using dashboard.Class;
-using dashboard.custom_controls;
 
 namespace dashboard
 {
@@ -38,20 +36,12 @@ namespace dashboard
 
         private void btn_clear()
         {
-            //gunaAdvenceButton1.Text = null;
-            //gunaAdvenceButton2.Text = null;
-            //gunaAdvenceButton3.Text = null;
-            //gunaAdvenceButton4.Text = null;
             pictureBox1.Hide();
             label1.Hide();
         }
 
         private void btn_text()
         {
-            //gunaAdvenceButton1.Text = "Management";
-            //gunaAdvenceButton2.Text = "Profile";
-            //gunaAdvenceButton3.Text = "About";
-            //gunaAdvenceButton4.Text = "Exit";
             pictureBox1.Show();
             label1.Show();
         }
@@ -90,6 +80,26 @@ namespace dashboard
 
         #region control_events
         //buttons click events
+
+        //toggle menu drawer click
+        private void btnToggleDrawer_Click(object sender, EventArgs e)
+        {
+
+            if (pnlDrawer.Width == 200)
+            {
+                //Drawer Close
+                pnlDrawer.Width = 50;
+                panelToggle.BackColor = Color.FromArgb(10, 10, 10);
+                btn_clear();
+            }
+            else
+            {
+                //Drawer Open
+                pnlDrawer.Width = 200;
+                panelToggle.BackColor = Color.FromArgb(32, 32, 36);
+                btn_text();
+            }
+        }
 
         private void btnMax_Click(object sender, EventArgs e)
         {
@@ -132,23 +142,14 @@ namespace dashboard
             open_form(fm);
         }
 
-        //toggle menu drawer click
-        private void btnToggleDrawer_Click(object sender, EventArgs e)
-        {
 
-            if (pnlDrawer.Width == 200)
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (CustomMessageBox.ShowMessage("Do you want to logout?", "Alert!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                //Drawer Close
-                pnlDrawer.Width = 50;
-                panelToggle.BackColor = Color.FromArgb(10, 10, 10);
-                btn_clear();
-            }
-            else
-            {
-                //Drawer Open
-                pnlDrawer.Width = 200;
-                panelToggle.BackColor = Color.FromArgb(32, 32, 36);
-                btn_text();
+                this.Close();
+                frm_login fm = new frm_login();
+                fm.Show();
             }
         }
 

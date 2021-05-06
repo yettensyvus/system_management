@@ -4,15 +4,11 @@ using System.Windows.Forms;
 
 namespace dashboard
 {
-    public partial class frm_peoples_edit : Form
+    public partial class frm_peoples_add : Form
     {
-
-
         DBConnection conn = new DBConnection();
 
-        public int id;
-
-        public frm_peoples_edit()
+        public frm_peoples_add()
         {
             InitializeComponent();
         }
@@ -23,17 +19,13 @@ namespace dashboard
             f.setAlert(msg, type);
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
                 conn.ConnectionOpen();
-                string sqlExpression = "UPDATE peoples SET full_name = N'" + txtFullName.Text + "' , date_of_birth = '" + date_of_birth.Value.ToString("yyyy/MM/dd") + "' , idnp = '" + txtIDNP.Text + "' WHERE id_peoples = " + id;
+                string sqlExpression = "INSERT INTO peoples (full_name, date_of_birth, idnp) VALUES (N'" + txtFullName.Text + "' , '" + date_of_birth.Value.ToString("yyyy/MM/dd") + "' , '" + txtIDNP.Text + "')";
 
                 SqlCommand interogation = new SqlCommand(sqlExpression, conn.connection);
                 SqlDataReader reader = interogation.ExecuteReader();
@@ -47,6 +39,11 @@ namespace dashboard
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

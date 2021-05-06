@@ -42,13 +42,13 @@ namespace dashboard
             this.pnlDrawer = new System.Windows.Forms.Panel();
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnAbout = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnProfile = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnManagement = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelToggle = new System.Windows.Forms.Panel();
             this.btnToggleDrawer = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnProfile = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -166,9 +166,9 @@ namespace dashboard
             // pnlDrawer
             // 
             this.pnlDrawer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.pnlDrawer.Controls.Add(this.btnExit);
             this.pnlDrawer.Controls.Add(this.btnAbout);
             this.pnlDrawer.Controls.Add(this.btnProfile);
+            this.pnlDrawer.Controls.Add(this.btnExit);
             this.pnlDrawer.Controls.Add(this.btnManagement);
             this.pnlDrawer.Controls.Add(this.panelLogo);
             this.pnlDrawer.Controls.Add(this.panelToggle);
@@ -214,7 +214,7 @@ namespace dashboard
             this.btnExit.Size = new System.Drawing.Size(200, 49);
             this.btnExit.TabIndex = 15;
             this.btnExit.Text = "Exit";
-            this.btnExit.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnAbout
             // 
@@ -253,44 +253,6 @@ namespace dashboard
             this.btnAbout.TabIndex = 14;
             this.btnAbout.Text = "About";
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
-            // 
-            // btnProfile
-            // 
-            this.btnProfile.Animated = true;
-            this.btnProfile.AnimationHoverSpeed = 0.07F;
-            this.btnProfile.AnimationSpeed = 0.03F;
-            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
-            this.btnProfile.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnProfile.BorderColor = System.Drawing.Color.Black;
-            this.btnProfile.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
-            this.btnProfile.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnProfile.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnProfile.CheckedForeColor = System.Drawing.Color.White;
-            this.btnProfile.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnProfile.CheckedImage")));
-            this.btnProfile.CheckedLineColor = System.Drawing.Color.Black;
-            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProfile.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnProfile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProfile.FocusedColor = System.Drawing.Color.Empty;
-            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnProfile.ForeColor = System.Drawing.Color.White;
-            this.btnProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnProfile.Image")));
-            this.btnProfile.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnProfile.LineColor = System.Drawing.Color.Transparent;
-            this.btnProfile.LineLeft = 4;
-            this.btnProfile.Location = new System.Drawing.Point(0, 231);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
-            this.btnProfile.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnProfile.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnProfile.OnHoverImage = null;
-            this.btnProfile.OnHoverLineColor = System.Drawing.Color.Transparent;
-            this.btnProfile.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnProfile.OnPressedDepth = 0;
-            this.btnProfile.Size = new System.Drawing.Size(200, 49);
-            this.btnProfile.TabIndex = 13;
-            this.btnProfile.Text = "Profile";
-            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnManagement
             // 
@@ -385,6 +347,44 @@ namespace dashboard
             this.btnToggleDrawer.Zoom = 10;
             this.btnToggleDrawer.Click += new System.EventHandler(this.btnToggleDrawer_Click);
             // 
+            // btnProfile
+            // 
+            this.btnProfile.Animated = true;
+            this.btnProfile.AnimationHoverSpeed = 0.07F;
+            this.btnProfile.AnimationSpeed = 0.03F;
+            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnProfile.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.btnProfile.BorderColor = System.Drawing.Color.Black;
+            this.btnProfile.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
+            this.btnProfile.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnProfile.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnProfile.CheckedForeColor = System.Drawing.Color.White;
+            this.btnProfile.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnProfile.CheckedImage")));
+            this.btnProfile.CheckedLineColor = System.Drawing.Color.Black;
+            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProfile.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnProfile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProfile.FocusedColor = System.Drawing.Color.Empty;
+            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnProfile.ForeColor = System.Drawing.Color.White;
+            this.btnProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnProfile.Image")));
+            this.btnProfile.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnProfile.LineColor = System.Drawing.Color.Transparent;
+            this.btnProfile.LineLeft = 4;
+            this.btnProfile.Location = new System.Drawing.Point(0, 231);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
+            this.btnProfile.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnProfile.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnProfile.OnHoverImage = null;
+            this.btnProfile.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.btnProfile.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnProfile.OnPressedDepth = 0;
+            this.btnProfile.Size = new System.Drawing.Size(200, 49);
+            this.btnProfile.TabIndex = 16;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,11 +432,11 @@ namespace dashboard
         private System.Windows.Forms.PictureBox pictureBox1;
         internal Guna.UI.WinForms.GunaAdvenceButton btnManagement;
         internal Guna.UI.WinForms.GunaAdvenceButton btnAbout;
-        internal Guna.UI.WinForms.GunaAdvenceButton btnProfile;
         internal Guna.UI.WinForms.GunaAdvenceButton btnExit;
         private System.Windows.Forms.Panel panelToggle;
         private Bunifu.Framework.UI.BunifuImageButton btnToggleDrawer;
         private System.Windows.Forms.Label label1;
+        internal Guna.UI.WinForms.GunaAdvenceButton btnProfile;
     }
 }
 

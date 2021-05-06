@@ -1,5 +1,5 @@
 ﻿
-namespace dashboard.custom_controls
+namespace dashboard
 {
     partial class frm_alert
     {
@@ -45,9 +45,9 @@ namespace dashboard.custom_controls
             this.GunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.GunaLabel1.Location = new System.Drawing.Point(70, 24);
             this.GunaLabel1.Name = "GunaLabel1";
-            this.GunaLabel1.Size = new System.Drawing.Size(93, 21);
+            this.GunaLabel1.Size = new System.Drawing.Size(80, 21);
             this.GunaLabel1.TabIndex = 14;
-            this.GunaLabel1.Text = "GunaLabel1";
+            this.GunaLabel1.Text = "Message...";
             // 
             // GunaPanel1
             // 
@@ -88,8 +88,7 @@ namespace dashboard.custom_controls
             // 
             // frm_alert
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(171)))), ((int)(((byte)(160)))));
             this.ClientSize = new System.Drawing.Size(380, 70);
             this.Controls.Add(this.GunaLabel1);
@@ -99,6 +98,7 @@ namespace dashboard.custom_controls
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_alert";
+            this.ShowInTaskbar = false;
             this.Text = "frm_alert";
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox1)).EndInit();

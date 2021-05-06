@@ -1,5 +1,5 @@
 ﻿
-namespace dashboard.Class
+namespace dashboard
 {
     partial class frm_user_info
     {
@@ -48,14 +48,14 @@ namespace dashboard.Class
             this.label1 = new System.Windows.Forms.Label();
             this.txtPassword = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUsername = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
-            this.btnRegister = new Guna.UI.WinForms.GunaButton();
+            this.btnUpdate = new Guna.UI.WinForms.GunaButton();
             this.DragPanel = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.DragForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtUsername = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -67,7 +67,7 @@ namespace dashboard.Class
             this.label3.Location = new System.Drawing.Point(299, 252);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 20);
-            this.label3.TabIndex = 126;
+            this.label3.TabIndex = 135;
             this.label3.Text = "SECRET WORD";
             // 
             // txtSecretW
@@ -137,8 +137,8 @@ namespace dashboard.Class
             this.txtSecretW.ShortcutsEnabled = true;
             this.txtSecretW.Size = new System.Drawing.Size(303, 35);
             this.txtSecretW.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
-            this.txtSecretW.TabIndex = 125;
-            this.txtSecretW.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSecretW.TabIndex = 134;
+            this.txtSecretW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSecretW.TextMarginBottom = 0;
             this.txtSecretW.TextMarginLeft = 0;
             this.txtSecretW.TextMarginTop = 0;
@@ -155,7 +155,7 @@ namespace dashboard.Class
             this.label1.Location = new System.Drawing.Point(308, 174);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 20);
-            this.label1.TabIndex = 124;
+            this.label1.TabIndex = 133;
             this.label1.Text = "PASSWORD";
             // 
             // txtPassword
@@ -176,7 +176,7 @@ namespace dashboard.Class
             this.txtPassword.BorderThickness = 2;
             this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtPassword.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtPassword.DefaultText = "";
             this.txtPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
             this.txtPassword.ForeColor = System.Drawing.Color.LightGray;
@@ -225,8 +225,8 @@ namespace dashboard.Class
             this.txtPassword.ShortcutsEnabled = true;
             this.txtPassword.Size = new System.Drawing.Size(303, 35);
             this.txtPassword.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
-            this.txtPassword.TabIndex = 123;
-            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPassword.TabIndex = 132;
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.TextMarginBottom = 0;
             this.txtPassword.TextMarginLeft = 0;
             this.txtPassword.TextMarginTop = 0;
@@ -243,8 +243,73 @@ namespace dashboard.Class
             this.label2.Location = new System.Drawing.Point(307, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 20);
-            this.label2.TabIndex = 122;
+            this.label2.TabIndex = 131;
             this.label2.Text = "USERNAME";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdate.AnimationHoverSpeed = 0.07F;
+            this.btnUpdate.AnimationSpeed = 0.03F;
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.btnUpdate.BorderColor = System.Drawing.Color.Black;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnUpdate.FocusedColor = System.Drawing.Color.Empty;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btnUpdate.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.ImageSize = new System.Drawing.Size(12, 12);
+            this.btnUpdate.Location = new System.Drawing.Point(203, 342);
+            this.btnUpdate.MaximumSize = new System.Drawing.Size(303, 46);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnUpdate.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnUpdate.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnUpdate.OnHoverImage = null;
+            this.btnUpdate.OnPressedColor = System.Drawing.Color.Black;
+            this.btnUpdate.Size = new System.Drawing.Size(303, 46);
+            this.btnUpdate.TabIndex = 129;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // DragPanel
+            // 
+            this.DragPanel.Fixed = true;
+            this.DragPanel.Horizontal = true;
+            this.DragPanel.TargetControl = null;
+            this.DragPanel.Vertical = true;
+            // 
+            // DragForm
+            // 
+            this.DragForm.Fixed = true;
+            this.DragForm.Horizontal = true;
+            this.DragForm.TargetControl = this;
+            this.DragForm.Vertical = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(715, 78);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 137;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 374);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(715, 78);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 136;
+            this.pictureBox1.TabStop = false;
             // 
             // txtUsername
             // 
@@ -313,8 +378,8 @@ namespace dashboard.Class
             this.txtUsername.ShortcutsEnabled = true;
             this.txtUsername.Size = new System.Drawing.Size(303, 35);
             this.txtUsername.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
-            this.txtUsername.TabIndex = 121;
-            this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUsername.TabIndex = 138;
+            this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtUsername.TextMarginBottom = 0;
             this.txtUsername.TextMarginLeft = 0;
             this.txtUsername.TextMarginTop = 0;
@@ -322,108 +387,45 @@ namespace dashboard.Class
             this.txtUsername.UseSystemPasswordChar = false;
             this.txtUsername.WordWrap = true;
             // 
-            // btnRegister
-            // 
-            this.btnRegister.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegister.AnimationHoverSpeed = 0.07F;
-            this.btnRegister.AnimationSpeed = 0.03F;
-            this.btnRegister.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegister.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnRegister.BorderColor = System.Drawing.Color.Black;
-            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegister.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnRegister.FocusedColor = System.Drawing.Color.Empty;
-            this.btnRegister.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.btnRegister.ForeColor = System.Drawing.Color.DarkGray;
-            this.btnRegister.Image = ((System.Drawing.Image)(resources.GetObject("btnRegister.Image")));
-            this.btnRegister.ImageSize = new System.Drawing.Size(12, 12);
-            this.btnRegister.Location = new System.Drawing.Point(203, 342);
-            this.btnRegister.MaximumSize = new System.Drawing.Size(303, 46);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnRegister.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnRegister.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnRegister.OnHoverImage = null;
-            this.btnRegister.OnPressedColor = System.Drawing.Color.Black;
-            this.btnRegister.Size = new System.Drawing.Size(303, 46);
-            this.btnRegister.TabIndex = 120;
-            this.btnRegister.Text = "UPDATE";
-            this.btnRegister.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DragPanel
-            // 
-            this.DragPanel.Fixed = true;
-            this.DragPanel.Horizontal = true;
-            this.DragPanel.TargetControl = null;
-            this.DragPanel.Vertical = true;
-            // 
-            // DragForm
-            // 
-            this.DragForm.Fixed = true;
-            this.DragForm.Horizontal = true;
-            this.DragForm.TargetControl = this;
-            this.DragForm.Vertical = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 413);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(731, 78);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 127;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(731, 78);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 128;
-            this.pictureBox2.TabStop = false;
-            // 
             // frm_user_info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(731, 491);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(715, 452);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtSecretW);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.btnRegister);
-            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_user_info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_user_info";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.frm_user_info_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
         private System.Windows.Forms.Label label3;
         public Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtSecretW;
         private System.Windows.Forms.Label label1;
         public Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtPassword;
         private System.Windows.Forms.Label label2;
-        public Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtUsername;
-        internal Guna.UI.WinForms.GunaButton btnRegister;
+        internal Guna.UI.WinForms.GunaButton btnUpdate;
         private Bunifu.Framework.UI.BunifuDragControl DragPanel;
         private Bunifu.Framework.UI.BunifuDragControl DragForm;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        public Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtUsername;
     }
 }

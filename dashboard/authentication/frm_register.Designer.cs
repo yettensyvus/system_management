@@ -177,7 +177,7 @@ namespace dashboard
             this.txtSecretW.Size = new System.Drawing.Size(298, 35);
             this.txtSecretW.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
             this.txtSecretW.TabIndex = 118;
-            this.txtSecretW.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSecretW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSecretW.TextMarginBottom = 0;
             this.txtSecretW.TextMarginLeft = 0;
             this.txtSecretW.TextMarginTop = 0;
@@ -250,7 +250,7 @@ namespace dashboard
             stateProperties8.ForeColor = System.Drawing.Color.LightGray;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtPassword.OnIdleState = stateProperties8;
-            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PasswordChar = '●';
             this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtPassword.PlaceholderText = "";
             this.txtPassword.ReadOnly = false;
@@ -262,12 +262,12 @@ namespace dashboard
             this.txtPassword.Size = new System.Drawing.Size(302, 35);
             this.txtPassword.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
             this.txtPassword.TabIndex = 116;
-            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.TextMarginBottom = 0;
             this.txtPassword.TextMarginLeft = 0;
             this.txtPassword.TextMarginTop = 0;
             this.txtPassword.TextPlaceholder = "";
-            this.txtPassword.UseSystemPasswordChar = false;
+            this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.WordWrap = true;
             // 
             // label2
@@ -347,7 +347,7 @@ namespace dashboard
             this.txtUsername.Size = new System.Drawing.Size(298, 35);
             this.txtUsername.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
             this.txtUsername.TabIndex = 114;
-            this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtUsername.TextMarginBottom = 0;
             this.txtUsername.TextMarginLeft = 0;
             this.txtUsername.TextMarginTop = 0;
@@ -419,15 +419,14 @@ namespace dashboard
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtSecretW);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.txtPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_register";
-            this.Load += new System.EventHandler(this.frm_register_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();

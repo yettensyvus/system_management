@@ -1,6 +1,4 @@
-﻿using dashboard.Class;
-using dashboard.custom_controls;
-using System;
+﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -15,27 +13,13 @@ namespace dashboard
         public frm_register()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
         }
         #endregion
 
         #region control_events
 
-        private void frm_register_Load(object sender, EventArgs e)
-        {
-            this.DoubleBuffered = true;
-            DoubleBuffering.SetDoubleBuffering(label8, true);
-            DoubleBuffering.SetDoubleBuffering(pnlHeader, true);
-            DoubleBuffering.SetDoubleBuffering(pnlHeader, true);
-            DoubleBuffering.SetDoubleBuffering(btnClose, true);
-            DoubleBuffering.SetDoubleBuffering(label1, true);
-            DoubleBuffering.SetDoubleBuffering(label2, true);
-            DoubleBuffering.SetDoubleBuffering(label3, true);
-            DoubleBuffering.SetDoubleBuffering(txtPassword, true);
-            DoubleBuffering.SetDoubleBuffering(txtSecretW, true);
-            DoubleBuffering.SetDoubleBuffering(txtUsername, true);
-            DoubleBuffering.SetDoubleBuffering(btnRegister, true);
-            DoubleBuffering.SetDoubleBuffering(pictureBox1, true);
-        }
+
 
         public void Alert(string msg, frm_alert.alertTypeEnum type)
         {

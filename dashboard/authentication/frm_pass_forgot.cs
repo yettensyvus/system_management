@@ -1,6 +1,4 @@
-﻿using dashboard.Class;
-using dashboard.custom_controls;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -17,24 +15,12 @@ namespace dashboard
         public frm_pass_forgot()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
         }
 
         #endregion
 
         #region control_events
-
-        private void frm_pass_forgot_Load(object sender, EventArgs e)
-        {
-            this.DoubleBuffered = true;
-            DoubleBuffering.SetDoubleBuffering(label_form_name, true);
-            DoubleBuffering.SetDoubleBuffering(pnlHeader, true);
-            DoubleBuffering.SetDoubleBuffering(btnClose, true);
-            DoubleBuffering.SetDoubleBuffering(label2, true);
-            DoubleBuffering.SetDoubleBuffering(label3, true);
-            DoubleBuffering.SetDoubleBuffering(txtName, true);
-            DoubleBuffering.SetDoubleBuffering(txtSecretW, true);
-            DoubleBuffering.SetDoubleBuffering(btnRestore, true);
-        }
 
         public void Alert(string msg, frm_alert.alertTypeEnum type)
         {

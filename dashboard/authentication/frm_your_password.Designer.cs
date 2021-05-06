@@ -175,7 +175,6 @@ namespace dashboard
             this.Name = "frm_your_password";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_your_password";
-            this.Load += new System.EventHandler(this.frm_your_password_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

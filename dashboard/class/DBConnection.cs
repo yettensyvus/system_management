@@ -1,8 +1,7 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace dashboard.Class
+namespace dashboard
 {
     class DBConnection
     {
