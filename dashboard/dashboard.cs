@@ -13,11 +13,11 @@ namespace dashboard
         {
             InitializeComponent();
             this.DoubleBuffered = true;
+            hideSubMenu();
         }
         #endregion
 
         #region methodes
-
 
         //form load 
         private void open_form(object form)
@@ -76,6 +76,23 @@ namespace dashboard
             this.WindowState = FormWindowState.Minimized;
         }
 
+
+        private void hideSubMenu()
+        {
+            panelManagementSub.Visible = false;
+        }
+
+        private void showSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                hideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+                subMenu.Visible = false;
+        }
+
         #endregion
 
         #region control_events
@@ -91,6 +108,7 @@ namespace dashboard
                 pnlDrawer.Width = 50;
                 panelToggle.BackColor = Color.FromArgb(10, 10, 10);
                 btn_clear();
+
             }
             else
             {
@@ -118,30 +136,31 @@ namespace dashboard
             min_size();
         }
 
-        private void dashboard_Load(object sender, EventArgs e)
-        {
-            frm_peoples fm = new frm_peoples();
-            open_form(fm);
-        }
-
         private void btnManagement_Click(object sender, EventArgs e)
         {
-            frm_peoples fm = new frm_peoples();
-            open_form(fm);
+            showSubMenu(panelManagementSub);
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
+            hideSubMenu();
             frm_user_info fm = new frm_user_info();
             open_form(fm);
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
+            hideSubMenu();
             frm_about fm = new frm_about();
             open_form(fm);
         }
 
+        private void btnPeoples_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            frm_peoples_management fm = new frm_peoples_management();
+            open_form(fm);
+        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {

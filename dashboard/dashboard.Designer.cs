@@ -40,21 +40,25 @@ namespace dashboard
             this.btnMax = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnNormal = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnlDrawer = new System.Windows.Forms.Panel();
-            this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnProfile = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnAbout = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.panelManagementSub = new System.Windows.Forms.Panel();
+            this.gunaAdvenceButton2 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnPeoples = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnManagement = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelToggle = new System.Windows.Forms.Panel();
             this.btnToggleDrawer = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnProfile = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).BeginInit();
             this.pnlDrawer.SuspendLayout();
+            this.panelManagementSub.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelToggle.SuspendLayout();
@@ -166,8 +170,9 @@ namespace dashboard
             // pnlDrawer
             // 
             this.pnlDrawer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.pnlDrawer.Controls.Add(this.btnAbout);
             this.pnlDrawer.Controls.Add(this.btnProfile);
+            this.pnlDrawer.Controls.Add(this.btnAbout);
+            this.pnlDrawer.Controls.Add(this.panelManagementSub);
             this.pnlDrawer.Controls.Add(this.btnExit);
             this.pnlDrawer.Controls.Add(this.btnManagement);
             this.pnlDrawer.Controls.Add(this.panelLogo);
@@ -177,6 +182,165 @@ namespace dashboard
             this.pnlDrawer.Name = "pnlDrawer";
             this.pnlDrawer.Size = new System.Drawing.Size(200, 543);
             this.pnlDrawer.TabIndex = 11;
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.Animated = true;
+            this.btnProfile.AnimationHoverSpeed = 0.07F;
+            this.btnProfile.AnimationSpeed = 0.03F;
+            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnProfile.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.btnProfile.BorderColor = System.Drawing.Color.Black;
+            this.btnProfile.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
+            this.btnProfile.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnProfile.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnProfile.CheckedForeColor = System.Drawing.Color.White;
+            this.btnProfile.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnProfile.CheckedImage")));
+            this.btnProfile.CheckedLineColor = System.Drawing.Color.Black;
+            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProfile.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnProfile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProfile.FocusedColor = System.Drawing.Color.Empty;
+            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnProfile.ForeColor = System.Drawing.Color.White;
+            this.btnProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnProfile.Image")));
+            this.btnProfile.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnProfile.LineColor = System.Drawing.Color.Transparent;
+            this.btnProfile.LineLeft = 4;
+            this.btnProfile.Location = new System.Drawing.Point(0, 378);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
+            this.btnProfile.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnProfile.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnProfile.OnHoverImage = null;
+            this.btnProfile.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.btnProfile.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnProfile.OnPressedDepth = 0;
+            this.btnProfile.Size = new System.Drawing.Size(200, 49);
+            this.btnProfile.TabIndex = 16;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.Animated = true;
+            this.btnAbout.AnimationHoverSpeed = 0.07F;
+            this.btnAbout.AnimationSpeed = 0.03F;
+            this.btnAbout.BackColor = System.Drawing.Color.Transparent;
+            this.btnAbout.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.btnAbout.BorderColor = System.Drawing.Color.Black;
+            this.btnAbout.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
+            this.btnAbout.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnAbout.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnAbout.CheckedForeColor = System.Drawing.Color.White;
+            this.btnAbout.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAbout.CheckedImage")));
+            this.btnAbout.CheckedLineColor = System.Drawing.Color.Black;
+            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbout.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAbout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAbout.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAbout.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAbout.ForeColor = System.Drawing.Color.White;
+            this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
+            this.btnAbout.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAbout.LineColor = System.Drawing.Color.Transparent;
+            this.btnAbout.LineLeft = 4;
+            this.btnAbout.Location = new System.Drawing.Point(0, 329);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
+            this.btnAbout.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnAbout.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAbout.OnHoverImage = null;
+            this.btnAbout.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.btnAbout.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnAbout.OnPressedDepth = 0;
+            this.btnAbout.Size = new System.Drawing.Size(200, 49);
+            this.btnAbout.TabIndex = 14;
+            this.btnAbout.Text = "About";
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
+            // panelManagementSub
+            // 
+            this.panelManagementSub.Controls.Add(this.gunaAdvenceButton2);
+            this.panelManagementSub.Controls.Add(this.btnPeoples);
+            this.panelManagementSub.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelManagementSub.Location = new System.Drawing.Point(0, 231);
+            this.panelManagementSub.Name = "panelManagementSub";
+            this.panelManagementSub.Size = new System.Drawing.Size(200, 98);
+            this.panelManagementSub.TabIndex = 17;
+            // 
+            // gunaAdvenceButton2
+            // 
+            this.gunaAdvenceButton2.Animated = true;
+            this.gunaAdvenceButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceButton2.AnimationSpeed = 0.03F;
+            this.gunaAdvenceButton2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
+            this.gunaAdvenceButton2.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton2.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
+            this.gunaAdvenceButton2.CheckedBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton2.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton2.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton2.CheckedImage")));
+            this.gunaAdvenceButton2.CheckedLineColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaAdvenceButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaAdvenceButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceButton2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gunaAdvenceButton2.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton2.Image")));
+            this.gunaAdvenceButton2.ImageSize = new System.Drawing.Size(32, 32);
+            this.gunaAdvenceButton2.LineColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton2.LineLeft = 4;
+            this.gunaAdvenceButton2.Location = new System.Drawing.Point(0, 49);
+            this.gunaAdvenceButton2.Name = "gunaAdvenceButton2";
+            this.gunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.gunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton2.OnHoverImage = null;
+            this.gunaAdvenceButton2.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton2.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.gunaAdvenceButton2.OnPressedDepth = 0;
+            this.gunaAdvenceButton2.Size = new System.Drawing.Size(200, 49);
+            this.gunaAdvenceButton2.TabIndex = 16;
+            this.gunaAdvenceButton2.Text = "Dashboard Ground";
+            // 
+            // btnPeoples
+            // 
+            this.btnPeoples.Animated = true;
+            this.btnPeoples.AnimationHoverSpeed = 0.07F;
+            this.btnPeoples.AnimationSpeed = 0.03F;
+            this.btnPeoples.BackColor = System.Drawing.Color.Transparent;
+            this.btnPeoples.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
+            this.btnPeoples.BorderColor = System.Drawing.Color.Black;
+            this.btnPeoples.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
+            this.btnPeoples.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnPeoples.CheckedForeColor = System.Drawing.Color.White;
+            this.btnPeoples.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnPeoples.CheckedImage")));
+            this.btnPeoples.CheckedLineColor = System.Drawing.Color.Transparent;
+            this.btnPeoples.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPeoples.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPeoples.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPeoples.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPeoples.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPeoples.ForeColor = System.Drawing.Color.White;
+            this.btnPeoples.Image = ((System.Drawing.Image)(resources.GetObject("btnPeoples.Image")));
+            this.btnPeoples.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnPeoples.LineColor = System.Drawing.Color.Transparent;
+            this.btnPeoples.LineLeft = 4;
+            this.btnPeoples.Location = new System.Drawing.Point(0, 0);
+            this.btnPeoples.Name = "btnPeoples";
+            this.btnPeoples.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.btnPeoples.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnPeoples.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPeoples.OnHoverImage = null;
+            this.btnPeoples.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.btnPeoples.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnPeoples.OnPressedDepth = 0;
+            this.btnPeoples.Size = new System.Drawing.Size(200, 49);
+            this.btnPeoples.TabIndex = 15;
+            this.btnPeoples.Text = "Dashboard Peoples";
+            this.btnPeoples.Click += new System.EventHandler(this.btnPeoples_Click);
             // 
             // btnExit
             // 
@@ -215,44 +379,6 @@ namespace dashboard
             this.btnExit.TabIndex = 15;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnAbout
-            // 
-            this.btnAbout.Animated = true;
-            this.btnAbout.AnimationHoverSpeed = 0.07F;
-            this.btnAbout.AnimationSpeed = 0.03F;
-            this.btnAbout.BackColor = System.Drawing.Color.Transparent;
-            this.btnAbout.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnAbout.BorderColor = System.Drawing.Color.Black;
-            this.btnAbout.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
-            this.btnAbout.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnAbout.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnAbout.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAbout.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAbout.CheckedImage")));
-            this.btnAbout.CheckedLineColor = System.Drawing.Color.Black;
-            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAbout.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAbout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAbout.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAbout.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAbout.ForeColor = System.Drawing.Color.White;
-            this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
-            this.btnAbout.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAbout.LineColor = System.Drawing.Color.Transparent;
-            this.btnAbout.LineLeft = 4;
-            this.btnAbout.Location = new System.Drawing.Point(0, 280);
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
-            this.btnAbout.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnAbout.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAbout.OnHoverImage = null;
-            this.btnAbout.OnHoverLineColor = System.Drawing.Color.Transparent;
-            this.btnAbout.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnAbout.OnPressedDepth = 0;
-            this.btnAbout.Size = new System.Drawing.Size(200, 49);
-            this.btnAbout.TabIndex = 14;
-            this.btnAbout.Text = "About";
-            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // btnManagement
             // 
@@ -347,44 +473,6 @@ namespace dashboard
             this.btnToggleDrawer.Zoom = 10;
             this.btnToggleDrawer.Click += new System.EventHandler(this.btnToggleDrawer_Click);
             // 
-            // btnProfile
-            // 
-            this.btnProfile.Animated = true;
-            this.btnProfile.AnimationHoverSpeed = 0.07F;
-            this.btnProfile.AnimationSpeed = 0.03F;
-            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
-            this.btnProfile.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnProfile.BorderColor = System.Drawing.Color.Black;
-            this.btnProfile.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
-            this.btnProfile.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnProfile.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnProfile.CheckedForeColor = System.Drawing.Color.White;
-            this.btnProfile.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnProfile.CheckedImage")));
-            this.btnProfile.CheckedLineColor = System.Drawing.Color.Black;
-            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProfile.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnProfile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProfile.FocusedColor = System.Drawing.Color.Empty;
-            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnProfile.ForeColor = System.Drawing.Color.White;
-            this.btnProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnProfile.Image")));
-            this.btnProfile.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnProfile.LineColor = System.Drawing.Color.Transparent;
-            this.btnProfile.LineLeft = 4;
-            this.btnProfile.Location = new System.Drawing.Point(0, 231);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
-            this.btnProfile.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnProfile.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnProfile.OnHoverImage = null;
-            this.btnProfile.OnHoverLineColor = System.Drawing.Color.Transparent;
-            this.btnProfile.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnProfile.OnPressedDepth = 0;
-            this.btnProfile.Size = new System.Drawing.Size(200, 49);
-            this.btnProfile.TabIndex = 16;
-            this.btnProfile.Text = "Profile";
-            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
-            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,7 +488,6 @@ namespace dashboard
             this.Name = "dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "dashboard";
-            this.Load += new System.EventHandler(this.dashboard_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
@@ -408,6 +495,7 @@ namespace dashboard
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).EndInit();
             this.pnlDrawer.ResumeLayout(false);
+            this.panelManagementSub.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -437,6 +525,9 @@ namespace dashboard
         private Bunifu.Framework.UI.BunifuImageButton btnToggleDrawer;
         private System.Windows.Forms.Label label1;
         internal Guna.UI.WinForms.GunaAdvenceButton btnProfile;
+        private System.Windows.Forms.Panel panelManagementSub;
+        internal Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton2;
+        internal Guna.UI.WinForms.GunaAdvenceButton btnPeoples;
     }
 }
 

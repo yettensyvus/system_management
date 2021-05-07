@@ -65,9 +65,9 @@ namespace dashboard
                     break;
             }
             this.GunaLabel1.Text = msg;
- 
+
             this.Show();
-            
+
             this.action = actionEnum.start;
             this.Timer1.Interval = 1;
             this.Timer1.Start();

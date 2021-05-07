@@ -15,7 +15,7 @@
                         switch (icon)
                         {
                             case System.Windows.Forms.MessageBoxIcon.Information: //success
-                                msgOK.MessageIcon = Properties.Resources.checkmark_96px; 
+                                msgOK.MessageIcon = Properties.Resources.checkmark_96px;
                                 break;
                             case System.Windows.Forms.MessageBoxIcon.Question: //info
                                 msgOK.MessageIcon = Properties.Resources.question_mark_96px;
@@ -54,7 +54,7 @@
                         dlgResult = msgYesNo.ShowDialog();
                     }
                     break;
-                    
+
 
                 case System.Windows.Forms.MessageBoxButtons.RetryCancel:
                     using (frm_MessageError msgError = new frm_MessageError())

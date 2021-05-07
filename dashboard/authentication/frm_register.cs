@@ -88,8 +88,8 @@ namespace dashboard
             {
                 conn.ConnectionClose();
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }       
-           
+            }
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -100,6 +100,6 @@ namespace dashboard
         }
         #endregion
 
-       
+
     }
 }

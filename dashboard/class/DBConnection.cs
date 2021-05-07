@@ -11,7 +11,7 @@ namespace dashboard
         {
             connection = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog = management_system; Integrated Security = True");
 
-            if(connection.State==ConnectionState.Open)
+            if (connection.State == ConnectionState.Open)
             {
                 connection.Close();
                 connection.Open();

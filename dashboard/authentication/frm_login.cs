@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
 
 namespace dashboard
 {
@@ -89,7 +89,7 @@ namespace dashboard
                 }
                 conn.ConnectionClose();
 
-                
+
             }
 
             catch (Exception ex)
@@ -145,6 +145,6 @@ namespace dashboard
 
         #endregion
 
-      
+
     }
 }

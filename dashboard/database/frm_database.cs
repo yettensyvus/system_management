@@ -151,7 +151,7 @@ namespace dashboard
 
         private void btnAccess_Click(object sender, EventArgs e)
         {
-            if(get_path == null)
+            if (get_path == null)
             {
                 db_from_root();
             }
@@ -159,7 +159,7 @@ namespace dashboard
             {
                 db_from_file();
             }
-           
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)

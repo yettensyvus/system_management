@@ -1,21 +1,20 @@
-﻿using System;
+﻿using dashboard.Properties;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-using dashboard.Properties;
 
 namespace dashboard
 {
-
-    public partial class frm_peoples : Form
+    public partial class frm_peoples_pension : Form
     {
         #region main
         DBConnection conn = new DBConnection();
 
         private Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper vScrollHelper;
 
-        public frm_peoples()
+        public frm_peoples_pension()
         {
             InitializeComponent();
             DoubleBuffering.SetDoubleBuffering(this, true);
@@ -27,6 +26,20 @@ namespace dashboard
         {
             frm_alert f = new frm_alert();
             f.setAlert(msg, type);
+        }
+
+        //form load 
+        private void open_form(object form)
+        {
+            if (this.panel_Child.Controls.Count > 0)
+                this.panel_Child.Controls.Clear();
+            Form fh = form as Form;
+            fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
+            fh.Dock = DockStyle.Fill;
+            this.panel_Child.Controls.Add(fh);
+            this.panel_Child.Tag = fh;
+            fh.Show();
         }
 
         private void add_edit_btn()
@@ -56,7 +69,7 @@ namespace dashboard
             try
             {
                 conn.ConnectionOpen();
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT id_peoples AS ID, full_name AS NUME, date_of_birth AS DATE, idnp AS IDNP FROM peoples", conn.connection);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT peoples_pension.id_pensionar AS ID, peoples.full_name AS NUME, peoples.date_of_birth AS DATE, peoples.idnp AS IDNP, peoples_pension.pensie_numerar AS PENSIE FROM peoples_pension INNER JOIN peoples ON peoples_pension.id_peoples = peoples.id_peoples", conn.connection);
                 DataTable data = new DataTable();
                 sda.Fill(data);
                 grid.DataSource = data;
@@ -68,20 +81,18 @@ namespace dashboard
                 conn.ConnectionClose();
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+
         }
 
         private void grid_fill()
         {
-            grid.DataBindingComplete += (o, _) =>
-            {
-                var dataGridView = o as DataGridView;
-                if (dataGridView != null)
-                {
-                    dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-                    dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                }
-            };
+            this.grid.Columns["ID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["NUME"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["DATE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["IDNP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["PENSIE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.grid.Columns["EDIT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.grid.Columns["DELETE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void copyAlltoClipboard()
@@ -123,25 +134,25 @@ namespace dashboard
                 return;
             }
 
-            if (e.ColumnIndex == 0)
-            {
-                frm_peoples_edit form = new frm_peoples_edit();
+            int index = grid.Columns["EDIT"].Index;
+            int indexx = grid.Columns["DELETE"].Index;
 
-                int id = int.Parse(grid.CurrentRow.Cells["ID"].Value.ToString());
+            if (e.ColumnIndex == index)
+            {
+                frm_peoples_pension_upd form = new frm_peoples_pension_upd();
+
+                string id = grid.CurrentRow.Cells["ID"].Value.ToString();
 
                 try
                 {
                     string full_name = grid.CurrentRow.Cells["NUME"].Value.ToString();
 
-                    string message = string.Format("Edit People: {0}?", full_name);
+                    string message = string.Format("Update Pension For People: {0}?", full_name);
 
-                    if (CustomMessageBox.ShowMessage(message, "Confirm Edit!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (CustomMessageBox.ShowMessage(message, "Confirm Update!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         form.id = id;
-
-                        form.txtFullName.Text = grid.Rows[e.RowIndex].Cells["NUME"].Value.ToString();
-                        form.date_of_birth.Value = Convert.ToDateTime(grid.Rows[e.RowIndex].Cells["DATE"].Value.ToString());
-                        form.txtIDNP.Text = grid.Rows[e.RowIndex].Cells["IDNP"].Value.ToString();
+                        form.txtMoney.Text = grid.Rows[e.RowIndex].Cells["PENSIE"].Value.ToString();
                         form.ShowDialog();
                         return;
                     }
@@ -153,7 +164,7 @@ namespace dashboard
                 }
             }
 
-            if (e.ColumnIndex == 1)
+            if (e.ColumnIndex == indexx)
             {
                 int id = int.Parse(grid.CurrentRow.Cells["ID"].Value.ToString());
 
@@ -166,7 +177,7 @@ namespace dashboard
                     if (CustomMessageBox.ShowMessage(message, "Confirm Remove!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         conn.ConnectionOpen();
-                        string sqlExpression = "DELETE FROM peoples WHERE id_peoples = " + id;
+                        string sqlExpression = "DELETE FROM peoples_pension WHERE id_pensionar = " + id;
 
                         SqlCommand interogation = new SqlCommand(sqlExpression, conn.connection);
                         SqlDataReader reader = interogation.ExecuteReader();
@@ -218,14 +229,19 @@ namespace dashboard
         }
 
 
-
-
         #endregion
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frm_peoples_add form = new frm_peoples_add();
+            frm_peoples_pension_add form = new frm_peoples_pension_add();
             form.ShowDialog();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            frm_peoples_management fm = new frm_peoples_management();
+            open_form(fm);
+        }
+
     }
 }

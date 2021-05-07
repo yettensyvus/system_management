@@ -73,6 +73,16 @@ namespace dashboard.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_32px {
+            get {
+                object obj = ResourceManager.GetObject("add_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap box_important_96px {
             get {
                 object obj = ResourceManager.GetObject("box_important_96px", resourceCulture);

@@ -118,6 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAADwSURBVGhD7dhJCsJQEIThOOSCTluv5VJQcL6gIrEqVEAfBOJGu6E+6IXagf9pFpLKzMzMpGma
+        CUcvc0F4jblpar2dw1t8J88hEMrbZs/qwk4rcSGS3/y1zf10x8y0FhMCU8dPMRfWFtLHz7UWEwL74h+Y
+        hdZiQiDjz6wtpI9fai0mBDL+xNpC+viV1mJCYF/8XyhrGOwz/theGYTShsF+7gMQrhljtu3VASjrO7iu
+        7xBPzFprsSHUhwgBoT5ECAj1IUJAqA8RAkL5t+PA6kL8xyodxJa/xAYz0sc5ILg7RL74DsJ5O+V8uGtm
+        ZvZ7VfUCwZnf5L0lh24AAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="txtSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMsAAAAjCAYAAAA67P7cAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
