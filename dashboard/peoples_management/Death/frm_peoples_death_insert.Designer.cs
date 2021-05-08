@@ -1,7 +1,7 @@
 ﻿
 namespace dashboard
 {
-    partial class frm_peoples_pension_insert
+    partial class frm_peoples_death_insert
     {
         /// <summary>
         /// Required designer variable.
@@ -30,18 +30,14 @@ namespace dashboard
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_peoples_pension_insert));
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_peoples_death_insert));
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnAdd = new Guna.UI.WinForms.GunaButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtMoney = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.DragPanel = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.date_of_death = new Bunifu.Framework.UI.BunifuDatepicker();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +52,7 @@ namespace dashboard
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(306, 53);
-            this.pnlHeader.TabIndex = 138;
+            this.pnlHeader.TabIndex = 142;
             // 
             // label8
             // 
@@ -100,7 +96,7 @@ namespace dashboard
             this.btnAdd.ForeColor = System.Drawing.Color.DarkGray;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageSize = new System.Drawing.Size(12, 12);
-            this.btnAdd.Location = new System.Drawing.Point(32, 156);
+            this.btnAdd.Location = new System.Drawing.Point(30, 162);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
             this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -108,7 +104,7 @@ namespace dashboard
             this.btnAdd.OnHoverImage = null;
             this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
             this.btnAdd.Size = new System.Drawing.Size(242, 46);
-            this.btnAdd.TabIndex = 140;
+            this.btnAdd.TabIndex = 144;
             this.btnAdd.Text = "INSERT";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -118,85 +114,11 @@ namespace dashboard
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(79, 83);
+            this.label3.Location = new System.Drawing.Point(87, 76);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 20);
-            this.label3.TabIndex = 139;
-            this.label3.Text = "PENSIE NUMERAR";
-            // 
-            // txtMoney
-            // 
-            this.txtMoney.AcceptsReturn = false;
-            this.txtMoney.AcceptsTab = false;
-            this.txtMoney.AnimationSpeed = 200;
-            this.txtMoney.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtMoney.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtMoney.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
-            this.txtMoney.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtMoney.BackgroundImage")));
-            this.txtMoney.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
-            this.txtMoney.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.txtMoney.BorderColorHover = System.Drawing.Color.DodgerBlue;
-            this.txtMoney.BorderColorIdle = System.Drawing.Color.White;
-            this.txtMoney.BorderRadius = 30;
-            this.txtMoney.BorderThickness = 2;
-            this.txtMoney.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtMoney.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMoney.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtMoney.DefaultText = "";
-            this.txtMoney.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
-            this.txtMoney.ForeColor = System.Drawing.Color.LightGray;
-            this.txtMoney.HideSelection = true;
-            this.txtMoney.IconLeft = null;
-            this.txtMoney.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.txtMoney.IconPadding = 10;
-            this.txtMoney.IconRight = null;
-            this.txtMoney.IconRightCursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtMoney.Lines = new string[0];
-            this.txtMoney.Location = new System.Drawing.Point(32, 106);
-            this.txtMoney.MaxLength = 32767;
-            this.txtMoney.MinimumSize = new System.Drawing.Size(100, 35);
-            this.txtMoney.Modified = false;
-            this.txtMoney.Multiline = false;
-            this.txtMoney.Name = "txtMoney";
-            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtMoney.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            stateProperties2.FillColor = System.Drawing.Color.White;
-            stateProperties2.ForeColor = System.Drawing.Color.Empty;
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtMoney.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtMoney.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.White;
-            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
-            stateProperties4.ForeColor = System.Drawing.Color.LightGray;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtMoney.OnIdleState = stateProperties4;
-            this.txtMoney.PasswordChar = '\0';
-            this.txtMoney.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtMoney.PlaceholderText = "";
-            this.txtMoney.ReadOnly = false;
-            this.txtMoney.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtMoney.SelectedText = "";
-            this.txtMoney.SelectionLength = 0;
-            this.txtMoney.SelectionStart = 0;
-            this.txtMoney.ShortcutsEnabled = true;
-            this.txtMoney.Size = new System.Drawing.Size(242, 35);
-            this.txtMoney.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
-            this.txtMoney.TabIndex = 141;
-            this.txtMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtMoney.TextMarginBottom = 0;
-            this.txtMoney.TextMarginLeft = 0;
-            this.txtMoney.TextMarginTop = 0;
-            this.txtMoney.TextPlaceholder = "";
-            this.txtMoney.UseSystemPasswordChar = false;
-            this.txtMoney.WordWrap = true;
+            this.label3.Size = new System.Drawing.Size(119, 20);
+            this.label3.TabIndex = 143;
+            this.label3.Text = "DATE OF DEATH";
             // 
             // DragPanel
             // 
@@ -205,21 +127,34 @@ namespace dashboard
             this.DragPanel.TargetControl = this.pnlHeader;
             this.DragPanel.Vertical = true;
             // 
-            // frm_peoples_pension_insert
+            // date_of_death
+            // 
+            this.date_of_death.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.date_of_death.BorderRadius = 0;
+            this.date_of_death.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.date_of_death.ForeColor = System.Drawing.Color.LightGray;
+            this.date_of_death.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.date_of_death.FormatCustom = "yyyy-MM-dd";
+            this.date_of_death.Location = new System.Drawing.Point(29, 110);
+            this.date_of_death.Name = "date_of_death";
+            this.date_of_death.Size = new System.Drawing.Size(242, 36);
+            this.date_of_death.TabIndex = 145;
+            this.date_of_death.Value = new System.DateTime(2021, 5, 2, 15, 34, 30, 48);
+            // 
+            // frm_peoples_death_insert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(306, 220);
+            this.Controls.Add(this.date_of_death);
+            this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtMoney);
-            this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frm_peoples_pension_insert";
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_peoples_pension_insert";
+            this.Name = "frm_peoples_death_insert";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "frm_peoples_death_insert";
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
@@ -234,8 +169,8 @@ namespace dashboard
         private System.Windows.Forms.Label label8;
         private Bunifu.Framework.UI.BunifuImageButton btnClose;
         internal Guna.UI.WinForms.GunaButton btnAdd;
-        private System.Windows.Forms.Label label3;
-        public Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtMoney;
         private Bunifu.Framework.UI.BunifuDragControl DragPanel;
+        public Bunifu.Framework.UI.BunifuDatepicker date_of_death;
+        private System.Windows.Forms.Label label3;
     }
 }

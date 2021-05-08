@@ -4,19 +4,26 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+
 namespace dashboard
 {
-    public partial class frm_peoples_pension_add : Form
+    public partial class frm_peoples_death_add : Form
     {
         DBConnection conn = new DBConnection();
 
         private Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper vScrollHelper;
 
-
-        public frm_peoples_pension_add()
+        public frm_peoples_death_add()
         {
             InitializeComponent();
         }
+
+        public void Alert(string msg, frm_alert.alertTypeEnum type)
+        {
+            frm_alert f = new frm_alert();
+            f.setAlert(msg, type);
+        }
+
 
         private void peoples_data()
         {
@@ -38,15 +45,15 @@ namespace dashboard
 
         }
 
-        private void add_plus_btn()
+        private void add_remove_btn()
         {
             DataGridViewImageColumn img = new DataGridViewImageColumn();
-            Image image = Resources.add_32px;
+            Image image = Resources.trash_32px;
             img.Image = image;
             grid.Columns.Add(img);
-            img.HeaderText = "ADD";
-            img.Name = "ADD";
-            this.grid.Columns["ADD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            img.HeaderText = "REMOVE";
+            img.Name = "REMOVE";
+            this.grid.Columns["REMOVE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
         }
 
 
@@ -56,29 +63,21 @@ namespace dashboard
             this.grid.Columns["NUME"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.grid.Columns["DATE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.grid.Columns["IDNP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            this.grid.Columns["ADD"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["REMOVE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
-            this.grid.Columns["ADD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.grid.Columns["REMOVE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
         }
 
-
-
-        private void frm_peoples_pension_add_Load(object sender, EventArgs e)
+        private void frm_peoples_death_add_Load(object sender, EventArgs e)
         {
             vScrollHelper = new Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(grid, gunaVScrollBar1, true);
 
             peoples_data();
-            add_plus_btn();
+            add_remove_btn();
             grid_fill();
             vScrollHelper.UpdateScrollBar();
         }
-
-        private void grid_Resize(object sender, EventArgs e)
-        {
-            if (vScrollHelper != null) vScrollHelper.UpdateScrollBar();
-        }
-
 
         private void txtSearch_TextChange(object sender, EventArgs e)
         {
@@ -92,7 +91,6 @@ namespace dashboard
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -108,21 +106,21 @@ namespace dashboard
                 return;
             }
 
-            int index = grid.Columns["ADD"].Index;
+            int index = grid.Columns["REMOVE"].Index;
 
             if (e.ColumnIndex == index)
             {
-                frm_peoples_pension_insert form = new frm_peoples_pension_insert();
+                frm_peoples_death_insert form = new frm_peoples_death_insert();
 
-                string id = grid.CurrentRow.Cells["IDNP"].Value.ToString();
+                string id = grid.CurrentRow.Cells["ID"].Value.ToString();
 
                 try
                 {
                     string full_name = grid.CurrentRow.Cells["NUME"].Value.ToString();
 
-                    string message = string.Format("Add Pension For People: {0}?", full_name);
+                    string message = string.Format("This People: {0}, is Dead?", full_name);
 
-                    if (CustomMessageBox.ShowMessage(message, "Confirm Add!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (CustomMessageBox.ShowMessage(message, "Confirm!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         form.id = id;
                         form.ShowDialog();
@@ -135,6 +133,16 @@ namespace dashboard
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            peoples_data();
+        }
+
+        private void grid_Resize(object sender, EventArgs e)
+        {
+            if (vScrollHelper != null) vScrollHelper.UpdateScrollBar();
         }
     }
 }

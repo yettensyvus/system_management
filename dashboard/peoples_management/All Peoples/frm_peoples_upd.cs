@@ -30,6 +30,32 @@ namespace dashboard
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (txtFullName.Text.Length == 0)
+            {
+                this.Alert("Please Enter Name", frm_alert.alertTypeEnum.Warning);
+                txtFullName.Focus();
+                return;
+            }
+            else if (txtFullName.Text.Length < 5)
+            {
+                this.Alert("Minimum 5 Characters Long", frm_alert.alertTypeEnum.Info);
+                txtFullName.Focus();
+                return;
+            }
+
+            if (txtIDNP.Text.Length == 0)
+            {
+                this.Alert("Please Enter IDNP", frm_alert.alertTypeEnum.Warning);
+                txtIDNP.Focus();
+                return;
+            }
+            else if (txtIDNP.Text.Length < 13)
+            {
+                this.Alert("13 Characters Long", frm_alert.alertTypeEnum.Info);
+                txtIDNP.Focus();
+                return;
+            }
+
             try
             {
                 conn.ConnectionOpen();

@@ -1,7 +1,7 @@
 ﻿
 namespace dashboard
 {
-    partial class frm_peoples_pension
+    partial class frm_peoples_death
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace dashboard
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_peoples_pension));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_peoples_death));
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
@@ -69,7 +69,7 @@ namespace dashboard
             this.panel_Child.Location = new System.Drawing.Point(0, 0);
             this.panel_Child.Name = "panel_Child";
             this.panel_Child.Size = new System.Drawing.Size(715, 452);
-            this.panel_Child.TabIndex = 145;
+            this.panel_Child.TabIndex = 146;
             // 
             // btnClose
             // 
@@ -318,10 +318,9 @@ namespace dashboard
             this.grid.Size = new System.Drawing.Size(691, 293);
             this.grid.TabIndex = 149;
             this.grid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Dark;
-            this.grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellContentClick);
             this.grid.Resize += new System.EventHandler(this.grid_Resize);
             // 
-            // frm_peoples_pension
+            // frm_peoples_death
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -329,10 +328,10 @@ namespace dashboard
             this.ClientSize = new System.Drawing.Size(715, 452);
             this.Controls.Add(this.panel_Child);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frm_peoples_pension";
+            this.Name = "frm_peoples_death";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_peoples_pension";
-            this.Load += new System.EventHandler(this.frm_peoples_Load);
+            this.Text = "frm_peoples_death";
+            this.Load += new System.EventHandler(this.frm_peoples_death_Load);
             this.panel_Child.ResumeLayout(false);
             this.panel_Child.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();

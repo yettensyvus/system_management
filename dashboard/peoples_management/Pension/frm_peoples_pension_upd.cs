@@ -28,6 +28,12 @@ namespace dashboard
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (txtMoney.Text.Length == 0)
+            {
+                this.Alert("Please Enter Money", frm_alert.alertTypeEnum.Warning);
+                txtMoney.Focus();
+                return;
+            }
             try
             {
                 conn.ConnectionOpen();

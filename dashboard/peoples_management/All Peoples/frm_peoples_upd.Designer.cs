@@ -278,7 +278,7 @@ namespace dashboard
             this.txtIDNP.IconRightCursor = System.Windows.Forms.Cursors.Arrow;
             this.txtIDNP.Lines = new string[0];
             this.txtIDNP.Location = new System.Drawing.Point(16, 285);
-            this.txtIDNP.MaxLength = 32767;
+            this.txtIDNP.MaxLength = 13;
             this.txtIDNP.MinimumSize = new System.Drawing.Size(100, 35);
             this.txtIDNP.Modified = false;
             this.txtIDNP.Multiline = false;

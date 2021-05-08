@@ -91,8 +91,12 @@ namespace dashboard
             this.grid.Columns["DATE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.grid.Columns["IDNP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.grid.Columns["PENSIE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            this.grid.Columns["EDIT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            this.grid.Columns["DELETE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.grid.Columns["EDIT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["DELETE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+
+            this.grid.Columns["EDIT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.grid.Columns["DELETE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
         }
 
         private void copyAlltoClipboard()
@@ -201,8 +205,16 @@ namespace dashboard
 
         private void txtSearch_TextChange(object sender, EventArgs e)
         {
-            (grid.DataSource as DataTable).DefaultView.RowFilter = string.Format("NUME LIKE '%{0}%' OR IDNP LIKE '%{0}%'", txtSearch.Text);
-            label1.Text = "RECORDS: " + grid.Rows.Count.ToString();
+            try
+            {
+                (grid.DataSource as DataTable).DefaultView.RowFilter = string.Format("NUME LIKE '%{0}%' OR IDNP LIKE '%{0}%'", txtSearch.Text);
+                label1.Text = "RECORDS: " + grid.Rows.Count.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
 

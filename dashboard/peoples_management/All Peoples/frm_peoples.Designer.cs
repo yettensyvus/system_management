@@ -297,7 +297,6 @@ namespace dashboard
             this.grid.EnableHeadersVisualStyles = false;
             this.grid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
             this.grid.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.grid.HeaderBgColor = System.Drawing.Color.Empty;
             this.grid.HeaderForeColor = System.Drawing.Color.White;
             this.grid.Location = new System.Drawing.Point(9, 136);
             this.grid.Name = "grid";

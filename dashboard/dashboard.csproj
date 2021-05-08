@@ -103,6 +103,24 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="peoples_management\Death\frm_peoples_death_insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="peoples_management\Death\frm_peoples_death_insert.Designer.cs">
+      <DependentUpon>frm_peoples_death_insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="peoples_management\Death\frm_peoples_death_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="peoples_management\Death\frm_peoples_death_add.Designer.cs">
+      <DependentUpon>frm_peoples_death_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="peoples_management\Death\frm_peoples_death.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="peoples_management\Death\frm_peoples_death.Designer.cs">
+      <DependentUpon>frm_peoples_death.cs</DependentUpon>
+    </Compile>
     <Compile Include="peoples_management\Pension\frm_peoples_pension_upd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +253,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="peoples_management\Death\frm_peoples_death_insert.resx">
+      <DependentUpon>frm_peoples_death_insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="peoples_management\Death\frm_peoples_death_add.resx">
+      <DependentUpon>frm_peoples_death_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="peoples_management\Death\frm_peoples_death.resx">
+      <DependentUpon>frm_peoples_death.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="peoples_management\Pension\frm_peoples_pension_upd.resx">
       <DependentUpon>frm_peoples_pension_upd.cs</DependentUpon>
     </EmbeddedResource>

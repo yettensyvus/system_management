@@ -157,6 +157,7 @@ namespace dashboard
             this.btnDeath.UseSelectable = true;
             this.btnDeath.UseStyleColors = true;
             this.btnDeath.UseTileImage = true;
+            this.btnDeath.Click += new System.EventHandler(this.btnDeath_Click);
             // 
             // btnMarriage
             // 

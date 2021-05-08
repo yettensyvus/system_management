@@ -36,5 +36,11 @@ namespace dashboard
             frm_peoples_pension fm = new frm_peoples_pension();
             open_form(fm);
         }
+
+        private void btnDeath_Click(object sender, EventArgs e)
+        {
+            frm_peoples_death fm = new frm_peoples_death();
+            open_form(fm);
+        }
     }
 }
