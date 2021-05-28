@@ -34,11 +34,11 @@ namespace dashboard
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.label_form_name = new System.Windows.Forms.Label();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnServerList = new Bunifu.Framework.UI.BunifuDropdown();
             this.btnAccess = new Guna.UI.WinForms.GunaButton();
             this.btnBrowse = new Guna.UI.WinForms.GunaButton();
             this.DragForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.DragPanel = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.btnServerList = new Bunifu.Framework.UI.BunifuDropdown();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
@@ -81,21 +81,6 @@ namespace dashboard
             this.btnClose.TabStop = false;
             this.btnClose.Zoom = 10;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnServerList
-            // 
-            this.btnServerList.BackColor = System.Drawing.Color.Transparent;
-            this.btnServerList.BorderRadius = 3;
-            this.btnServerList.DisabledColor = System.Drawing.Color.Gray;
-            this.btnServerList.ForeColor = System.Drawing.Color.LightGray;
-            this.btnServerList.items = new string[0];
-            this.btnServerList.Location = new System.Drawing.Point(12, 87);
-            this.btnServerList.Name = "btnServerList";
-            this.btnServerList.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnServerList.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnServerList.selectedIndex = -1;
-            this.btnServerList.Size = new System.Drawing.Size(217, 35);
-            this.btnServerList.TabIndex = 63;
             // 
             // btnAccess
             // 
@@ -166,6 +151,21 @@ namespace dashboard
             this.DragPanel.TargetControl = this.pnlHeader;
             this.DragPanel.Vertical = true;
             // 
+            // btnServerList
+            // 
+            this.btnServerList.BackColor = System.Drawing.Color.Transparent;
+            this.btnServerList.BorderRadius = 3;
+            this.btnServerList.DisabledColor = System.Drawing.Color.Gray;
+            this.btnServerList.ForeColor = System.Drawing.Color.LightGray;
+            this.btnServerList.items = new string[0];
+            this.btnServerList.Location = new System.Drawing.Point(12, 87);
+            this.btnServerList.Name = "btnServerList";
+            this.btnServerList.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.btnServerList.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnServerList.selectedIndex = -1;
+            this.btnServerList.Size = new System.Drawing.Size(217, 35);
+            this.btnServerList.TabIndex = 63;
+            // 
             // frm_database
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,10 +194,10 @@ namespace dashboard
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label label_form_name;
         private Bunifu.Framework.UI.BunifuImageButton btnClose;
-        private Bunifu.Framework.UI.BunifuDropdown btnServerList;
         internal Guna.UI.WinForms.GunaButton btnAccess;
         internal Guna.UI.WinForms.GunaButton btnBrowse;
         private Bunifu.Framework.UI.BunifuDragControl DragForm;
         private Bunifu.Framework.UI.BunifuDragControl DragPanel;
+        private Bunifu.Framework.UI.BunifuDropdown btnServerList;
     }
 }

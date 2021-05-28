@@ -115,9 +115,9 @@ namespace dashboard
         {
             vScrollHelper = new Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(grid, gunaVScrollBar1, true);
 
-            all_data();
-            add_edit_btn();
             add_delete_btn();
+            add_edit_btn();
+            all_data();
             grid_fill();
 
             vScrollHelper.UpdateScrollBar();

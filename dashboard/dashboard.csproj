@@ -59,11 +59,20 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
       <HintPath>D:\frameworks\Bunifu_UI\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>D:\frameworks\Bunifu_UI\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
+      <HintPath>D:\frameworks\Bunifu_UI\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
       <HintPath>D:\frameworks\Bunifu_UI\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
       <HintPath>D:\frameworks\Bunifu_UI\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="BunifuDataViz">
+      <HintPath>D:\frameworks\Bunifu_UI\BunifuDataViz.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>D:\frameworks\Bunifu_UI\Bunifu_UI_v1.5.3.dll</HintPath>
@@ -103,6 +112,30 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="peoples_management\Graph\frm_peoples_graph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="peoples_management\Graph\frm_peoples_graph.Designer.cs">
+      <DependentUpon>frm_peoples_graph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="peoples_management\Sick\frm_peoples_sick_insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="peoples_management\Sick\frm_peoples_sick_insert.Designer.cs">
+      <DependentUpon>frm_peoples_sick_insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="peoples_management\Sick\frm_peoples_sick_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="peoples_management\Sick\frm_peoples_sick_add.Designer.cs">
+      <DependentUpon>frm_peoples_sick_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="peoples_management\Sick\frm_peoples_sick.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="peoples_management\Sick\frm_peoples_sick.Designer.cs">
+      <DependentUpon>frm_peoples_sick.cs</DependentUpon>
+    </Compile>
     <Compile Include="peoples_management\Death\frm_peoples_death_insert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +286,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="peoples_management\Graph\frm_peoples_graph.resx">
+      <DependentUpon>frm_peoples_graph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="peoples_management\Sick\frm_peoples_sick_insert.resx">
+      <DependentUpon>frm_peoples_sick_insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="peoples_management\Sick\frm_peoples_sick_add.resx">
+      <DependentUpon>frm_peoples_sick_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="peoples_management\Sick\frm_peoples_sick.resx">
+      <DependentUpon>frm_peoples_sick.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="peoples_management\Death\frm_peoples_death_insert.resx">
       <DependentUpon>frm_peoples_death_insert.cs</DependentUpon>
     </EmbeddedResource>
@@ -444,6 +489,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="peoples_management\Query\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

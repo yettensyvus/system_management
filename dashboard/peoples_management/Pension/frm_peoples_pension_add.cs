@@ -68,8 +68,8 @@ namespace dashboard
         {
             vScrollHelper = new Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(grid, gunaVScrollBar1, true);
 
-            peoples_data();
             add_plus_btn();
+            peoples_data();
             grid_fill();
             vScrollHelper.UpdateScrollBar();
         }

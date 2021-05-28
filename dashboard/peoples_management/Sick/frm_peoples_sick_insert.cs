@@ -1,16 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace dashboard
 {
-    public partial class frm_peoples_death_insert : Form
+    public partial class frm_peoples_sick_insert : Form
     {
+
         DBConnection conn = new DBConnection();
 
         public string id;
 
-        public frm_peoples_death_insert()
+        public frm_peoples_sick_insert()
         {
             InitializeComponent();
         }
@@ -23,19 +31,17 @@ namespace dashboard
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (txtDiagnoz.Text.Length == 0)
+            {
+                this.Alert("Please Enter Diagnoz", frm_alert.alertTypeEnum.Warning);
+                txtDiagnoz.Focus();
+                return;
+            }
 
             try
             {
                 conn.ConnectionOpen();
-
-                string begin = "BEGIN TRANSACTION;";
-                string query1 = "INSERT INTO peoples_deces (full_name, date_of_birth, idnp, date_of_death) VALUES ((SELECT full_name FROM peoples WHERE id_peoples = " + id + " ), (SELECT date_of_birth FROM peoples WHERE id_peoples = " + id + " ), (SELECT idnp FROM peoples WHERE id_peoples = " + id + " ), ' " + date_of_death.Value.ToString("yyyy/MM/dd") + "');";
-                string query2 = "DELETE FROM peoples WHERE id_peoples = " + id + ";";
-                string query3 = "DELETE FROM peoples_pension WHERE id_peoples = " + id + ";";
-                string query4 = "DELETE FROM peoples_bolnav WHERE id_peoples = " + id + ";";
-                string commit = "COMMIT TRANSACTION;";
-
-                string sqlExpression = begin + query1 + query2 + query3 + query4 + commit;
+                string sqlExpression = "INSERT INTO peoples_bolnav(id_peoples, tip_evidenta, diagnoza) VALUES  ((SELECT id_peoples FROM peoples WHERE idnp = '" + id + "')  , N'" + cmbList.Text + "' , N'" + txtDiagnoz.Text + "');";
 
                 SqlCommand interogation = new SqlCommand(sqlExpression, conn.connection);
                 SqlDataReader reader = interogation.ExecuteReader();
@@ -44,10 +50,10 @@ namespace dashboard
                 conn.ConnectionClose();
 
                 this.Alert("SUCCESS!", frm_alert.alertTypeEnum.Success);
-
             }
             catch (Exception ex)
             {
+                conn.ConnectionClose();
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

@@ -181,7 +181,7 @@ namespace dashboard
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(6, 432);
+            this.label1.Location = new System.Drawing.Point(6, 430);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 147;
@@ -239,7 +239,7 @@ namespace dashboard
             this.gunaVScrollBar1.Name = "gunaVScrollBar1";
             this.gunaVScrollBar1.Radius = 0;
             this.gunaVScrollBar1.ScrollIdleColor = System.Drawing.Color.DarkGray;
-            this.gunaVScrollBar1.Size = new System.Drawing.Size(10, 292);
+            this.gunaVScrollBar1.Size = new System.Drawing.Size(10, 280);
             this.gunaVScrollBar1.TabIndex = 145;
             this.gunaVScrollBar1.ThumbColor = System.Drawing.Color.DimGray;
             this.gunaVScrollBar1.ThumbHoverColor = System.Drawing.Color.Gray;
@@ -312,10 +312,11 @@ namespace dashboard
             this.grid.RowHeadersVisible = false;
             this.grid.RowTemplate.Height = 40;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid.Size = new System.Drawing.Size(691, 293);
+            this.grid.Size = new System.Drawing.Size(691, 280);
             this.grid.TabIndex = 149;
             this.grid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Dark;
             this.grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellContentClick);
+            this.grid.Resize += new System.EventHandler(this.grid_Resize);
             // 
             // frm_peoples
             // 

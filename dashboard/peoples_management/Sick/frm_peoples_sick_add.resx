@@ -134,30 +134,14 @@
         RK5CYII=
 </value>
   </data>
-  <data name="btnAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAEJJREFUKFNj
-        GBjw////dBCGcgkDoOJqEIZyCQOiNICcAFMIxLuhGMbHdB5IEEkBYQ3IAKYQyiUMyNFAWrBSETAwAAAW
-        9GGBom8PcQAAAABJRU5ErkJggg==
-</value>
-  </data>
   <metadata name="DragPanel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="txtIDNP.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAPIAAAAjCAYAAACuClcuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABOSURBVHhe7dOxDQAgDAQxRmWUbP6QnoYyki3dCLcAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB+Jdm3kjS3HhkYrkd+Hi5pSqkDaU9dA7kiu7kAAAAASUVO
-        RK5CYII=
-</value>
-  </data>
-  <data name="txtFullName.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAPIAAAAjCAYAAACuClcuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABOSURBVHhe7dOxDQAgDAQxRmWUbP6QnoYyki3dCLcAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB+Jdm3kjS3HhkYrkd+Hi5pSqkDaU9dA7kiu7kAAAAASUVO
-        RK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAMsAAAAjCAYAAAA67P7cAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAzSURBVHhe7cExAQAAAMKg9U9tCU8gAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAeKkBbycAAVCMtOEAAAAASUVORK5CYII=
 </value>
   </data>
 </root>

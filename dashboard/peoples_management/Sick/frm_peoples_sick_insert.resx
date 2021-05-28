@@ -144,15 +144,7 @@
   <metadata name="DragPanel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="txtIDNP.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAPIAAAAjCAYAAACuClcuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABOSURBVHhe7dOxDQAgDAQxRmWUbP6QnoYyki3dCLcAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB+Jdm3kjS3HhkYrkd+Hi5pSqkDaU9dA7kiu7kAAAAASUVO
-        RK5CYII=
-</value>
-  </data>
-  <data name="txtFullName.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtDiagnoz.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPIAAAAjCAYAAACuClcuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABOSURBVHhe7dOxDQAgDAQxRmWUbP6QnoYyki3dCLcAAAAA

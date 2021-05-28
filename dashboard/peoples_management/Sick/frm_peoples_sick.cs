@@ -1,17 +1,24 @@
-﻿using System;
+﻿using dashboard.Properties;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace dashboard
 {
-    public partial class frm_peoples_death : Form
+    public partial class frm_peoples_sick : Form
     {
         DBConnection conn = new DBConnection();
 
         private Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper vScrollHelper;
 
-        public frm_peoples_death()
+        public frm_peoples_sick()
         {
             InitializeComponent();
         }
@@ -41,7 +48,7 @@ namespace dashboard
             try
             {
                 conn.ConnectionOpen();
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT id_deces AS ID, full_name AS NUME, date_of_birth AS DATE, idnp AS IDNP, date_of_death AS DECES FROM peoples_deces  ", conn.connection);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT peoples_bolnav.id_bolnav AS ID, peoples.full_name AS NUME, peoples.date_of_birth AS DATE, peoples.idnp AS IDNP, peoples_bolnav.diagnoza AS DIAGNOZ FROM peoples_bolnav INNER JOIN peoples ON peoples_bolnav.id_peoples = peoples.id_peoples WHERE (peoples_bolnav.tip_evidenta = N'" + cmbList.Text + "')", conn.connection);
                 DataTable data = new DataTable();
                 sda.Fill(data);
                 grid.DataSource = data;
@@ -53,7 +60,17 @@ namespace dashboard
                 conn.ConnectionClose();
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
+        private void add_delete_btn()
+        {
+            DataGridViewImageColumn img = new DataGridViewImageColumn();
+            Image image = Resources.trash_32px;
+            img.Image = image;
+            grid.Columns.Add(img);
+            img.HeaderText = "DELETE";
+            img.Name = "DELETE";
+            this.grid.Columns["DELETE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
         }
 
         private void grid_fill()
@@ -62,7 +79,10 @@ namespace dashboard
             this.grid.Columns["NUME"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.grid.Columns["DATE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.grid.Columns["IDNP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.grid.Columns["DECES"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.grid.Columns["DIAGNOZ"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            this.grid.Columns["DELETE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["DELETE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void copyAlltoClipboard()
@@ -73,10 +93,11 @@ namespace dashboard
                 Clipboard.SetDataObject(dataObj);
         }
 
-        private void frm_peoples_death_Load(object sender, EventArgs e)
+        private void frm_peoples_sick_Load(object sender, EventArgs e)
         {
             vScrollHelper = new Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(grid, gunaVScrollBar1, true);
 
+            add_delete_btn();
             all_data();
             grid_fill();
 
@@ -118,6 +139,54 @@ namespace dashboard
 
         }
 
+
+        private void grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Skip the Column and Row Headers
+
+            if (e.ColumnIndex < 0 || e.RowIndex < 0)
+            {
+                return;
+            }
+
+            int index = grid.Columns["DELETE"].Index;
+
+            if (e.ColumnIndex == index)
+            {
+                int id = int.Parse(grid.CurrentRow.Cells["ID"].Value.ToString());
+
+                try
+                {
+                    string full_name = grid.CurrentRow.Cells["NUME"].Value.ToString();
+
+                    string message = string.Format("Remove People: {0}?", full_name);
+
+                    if (CustomMessageBox.ShowMessage(message, "Confirm Remove!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        conn.ConnectionOpen();
+                        string sqlExpression = "DELETE FROM peoples_bolnav WHERE id_bolnav = " + id;
+
+                        SqlCommand interogation = new SqlCommand(sqlExpression, conn.connection);
+                        SqlDataReader reader = interogation.ExecuteReader();
+
+                        reader.Close();
+                        conn.ConnectionClose();
+
+                        this.Alert("SUCCESS!", frm_alert.alertTypeEnum.Success);
+
+                        all_data();
+                        label1.Text = "RECORDS: " + grid.Rows.Count.ToString();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             all_data();
@@ -131,8 +200,13 @@ namespace dashboard
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frm_peoples_death_add form = new frm_peoples_death_add();
+            frm_peoples_sick_add form = new frm_peoples_sick_add();
             form.ShowDialog();
+        }
+
+        private void cmbList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            all_data();
         }
     }
 }

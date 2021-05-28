@@ -42,5 +42,17 @@ namespace dashboard
             frm_peoples_death fm = new frm_peoples_death();
             open_form(fm);
         }
+
+        private void btnInvalid_Click(object sender, EventArgs e)
+        {
+            frm_peoples_sick fm = new frm_peoples_sick();
+            open_form(fm);
+        }
+
+        private void btnGraph_Click(object sender, EventArgs e)
+        {
+            frm_peoples_graph fm = new frm_peoples_graph();
+            open_form(fm);
+        }
     }
 }

@@ -35,21 +35,19 @@ namespace dashboard
             this.btnGraph = new MetroFramework.Controls.MetroTile();
             this.btnPension = new MetroFramework.Controls.MetroTile();
             this.btnDeath = new MetroFramework.Controls.MetroTile();
-            this.btnMarriage = new MetroFramework.Controls.MetroTile();
-            this.btnBirth = new MetroFramework.Controls.MetroTile();
             this.btnPeoples = new MetroFramework.Controls.MetroTile();
+            this.btnQuery = new MetroFramework.Controls.MetroTile();
             this.panel_Child.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Child
             // 
             this.panel_Child.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
+            this.panel_Child.Controls.Add(this.btnQuery);
             this.panel_Child.Controls.Add(this.btnInvalid);
             this.panel_Child.Controls.Add(this.btnGraph);
             this.panel_Child.Controls.Add(this.btnPension);
             this.panel_Child.Controls.Add(this.btnDeath);
-            this.panel_Child.Controls.Add(this.btnMarriage);
-            this.panel_Child.Controls.Add(this.btnBirth);
             this.panel_Child.Controls.Add(this.btnPeoples);
             this.panel_Child.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Child.Location = new System.Drawing.Point(0, 0);
@@ -81,6 +79,7 @@ namespace dashboard
             this.btnInvalid.UseSelectable = true;
             this.btnInvalid.UseStyleColors = true;
             this.btnInvalid.UseTileImage = true;
+            this.btnInvalid.Click += new System.EventHandler(this.btnInvalid_Click);
             // 
             // btnGraph
             // 
@@ -106,6 +105,7 @@ namespace dashboard
             this.btnGraph.UseSelectable = true;
             this.btnGraph.UseStyleColors = true;
             this.btnGraph.UseTileImage = true;
+            this.btnGraph.Click += new System.EventHandler(this.btnGraph_Click);
             // 
             // btnPension
             // 
@@ -159,56 +159,6 @@ namespace dashboard
             this.btnDeath.UseTileImage = true;
             this.btnDeath.Click += new System.EventHandler(this.btnDeath_Click);
             // 
-            // btnMarriage
-            // 
-            this.btnMarriage.ActiveControl = null;
-            this.btnMarriage.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnMarriage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnMarriage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnMarriage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMarriage.ForeColor = System.Drawing.Color.White;
-            this.btnMarriage.Location = new System.Drawing.Point(164, 330);
-            this.btnMarriage.Name = "btnMarriage";
-            this.btnMarriage.Size = new System.Drawing.Size(135, 135);
-            this.btnMarriage.Style = MetroFramework.MetroColorStyle.Black;
-            this.btnMarriage.TabIndex = 114;
-            this.btnMarriage.Text = "Lista Casatorie";
-            this.btnMarriage.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnMarriage.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btnMarriage.TileImage = ((System.Drawing.Image)(resources.GetObject("btnMarriage.TileImage")));
-            this.btnMarriage.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnMarriage.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.btnMarriage.UseCustomBackColor = true;
-            this.btnMarriage.UseCustomForeColor = true;
-            this.btnMarriage.UseSelectable = true;
-            this.btnMarriage.UseStyleColors = true;
-            this.btnMarriage.UseTileImage = true;
-            // 
-            // btnBirth
-            // 
-            this.btnBirth.ActiveControl = null;
-            this.btnBirth.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBirth.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnBirth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnBirth.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBirth.ForeColor = System.Drawing.Color.White;
-            this.btnBirth.Location = new System.Drawing.Point(23, 330);
-            this.btnBirth.Name = "btnBirth";
-            this.btnBirth.Size = new System.Drawing.Size(135, 135);
-            this.btnBirth.Style = MetroFramework.MetroColorStyle.Black;
-            this.btnBirth.TabIndex = 113;
-            this.btnBirth.Text = "Lista Nastere";
-            this.btnBirth.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBirth.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btnBirth.TileImage = ((System.Drawing.Image)(resources.GetObject("btnBirth.TileImage")));
-            this.btnBirth.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnBirth.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.btnBirth.UseCustomBackColor = true;
-            this.btnBirth.UseCustomForeColor = true;
-            this.btnBirth.UseSelectable = true;
-            this.btnBirth.UseStyleColors = true;
-            this.btnBirth.UseTileImage = true;
-            // 
             // btnPeoples
             // 
             this.btnPeoples.ActiveControl = null;
@@ -235,6 +185,31 @@ namespace dashboard
             this.btnPeoples.UseTileImage = true;
             this.btnPeoples.Click += new System.EventHandler(this.btnPeoples_Click);
             // 
+            // btnQuery
+            // 
+            this.btnQuery.ActiveControl = null;
+            this.btnQuery.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnQuery.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnQuery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnQuery.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQuery.ForeColor = System.Drawing.Color.White;
+            this.btnQuery.Location = new System.Drawing.Point(23, 333);
+            this.btnQuery.Name = "btnQuery";
+            this.btnQuery.Size = new System.Drawing.Size(276, 132);
+            this.btnQuery.Style = MetroFramework.MetroColorStyle.Black;
+            this.btnQuery.TabIndex = 119;
+            this.btnQuery.Text = "Query";
+            this.btnQuery.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnQuery.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnQuery.TileImage = ((System.Drawing.Image)(resources.GetObject("btnQuery.TileImage")));
+            this.btnQuery.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnQuery.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnQuery.UseCustomBackColor = true;
+            this.btnQuery.UseCustomForeColor = true;
+            this.btnQuery.UseSelectable = true;
+            this.btnQuery.UseStyleColors = true;
+            this.btnQuery.UseTileImage = true;
+            // 
             // frm_peoples_management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,8 +232,7 @@ namespace dashboard
         private MetroFramework.Controls.MetroTile btnGraph;
         private MetroFramework.Controls.MetroTile btnPension;
         private MetroFramework.Controls.MetroTile btnDeath;
-        private MetroFramework.Controls.MetroTile btnMarriage;
-        private MetroFramework.Controls.MetroTile btnBirth;
         private MetroFramework.Controls.MetroTile btnPeoples;
+        private MetroFramework.Controls.MetroTile btnQuery;
     }
 }
