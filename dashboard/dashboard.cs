@@ -162,6 +162,13 @@ namespace dashboard
             open_form(fm);
         }
 
+        private void btnGround_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            frm_ground_management fm = new frm_ground_management();
+            open_form(fm);
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             if (CustomMessageBox.ShowMessage("Do you want to logout?", "Alert!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

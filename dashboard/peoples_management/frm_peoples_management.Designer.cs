@@ -31,12 +31,12 @@ namespace dashboard
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_peoples_management));
             this.panel_Child = new System.Windows.Forms.Panel();
+            this.btnQuery = new MetroFramework.Controls.MetroTile();
             this.btnInvalid = new MetroFramework.Controls.MetroTile();
             this.btnGraph = new MetroFramework.Controls.MetroTile();
             this.btnPension = new MetroFramework.Controls.MetroTile();
             this.btnDeath = new MetroFramework.Controls.MetroTile();
             this.btnPeoples = new MetroFramework.Controls.MetroTile();
-            this.btnQuery = new MetroFramework.Controls.MetroTile();
             this.panel_Child.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,32 @@ namespace dashboard
             this.panel_Child.Name = "panel_Child";
             this.panel_Child.Size = new System.Drawing.Size(731, 491);
             this.panel_Child.TabIndex = 112;
+            // 
+            // btnQuery
+            // 
+            this.btnQuery.ActiveControl = null;
+            this.btnQuery.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnQuery.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnQuery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnQuery.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQuery.ForeColor = System.Drawing.Color.White;
+            this.btnQuery.Location = new System.Drawing.Point(23, 333);
+            this.btnQuery.Name = "btnQuery";
+            this.btnQuery.Size = new System.Drawing.Size(276, 132);
+            this.btnQuery.Style = MetroFramework.MetroColorStyle.Black;
+            this.btnQuery.TabIndex = 119;
+            this.btnQuery.Text = "Queries";
+            this.btnQuery.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnQuery.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnQuery.TileImage = ((System.Drawing.Image)(resources.GetObject("btnQuery.TileImage")));
+            this.btnQuery.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnQuery.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnQuery.UseCustomBackColor = true;
+            this.btnQuery.UseCustomForeColor = true;
+            this.btnQuery.UseSelectable = true;
+            this.btnQuery.UseStyleColors = true;
+            this.btnQuery.UseTileImage = true;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
             // btnInvalid
             // 
@@ -184,31 +210,6 @@ namespace dashboard
             this.btnPeoples.UseStyleColors = true;
             this.btnPeoples.UseTileImage = true;
             this.btnPeoples.Click += new System.EventHandler(this.btnPeoples_Click);
-            // 
-            // btnQuery
-            // 
-            this.btnQuery.ActiveControl = null;
-            this.btnQuery.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnQuery.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnQuery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnQuery.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuery.ForeColor = System.Drawing.Color.White;
-            this.btnQuery.Location = new System.Drawing.Point(23, 333);
-            this.btnQuery.Name = "btnQuery";
-            this.btnQuery.Size = new System.Drawing.Size(276, 132);
-            this.btnQuery.Style = MetroFramework.MetroColorStyle.Black;
-            this.btnQuery.TabIndex = 119;
-            this.btnQuery.Text = "Query";
-            this.btnQuery.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnQuery.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btnQuery.TileImage = ((System.Drawing.Image)(resources.GetObject("btnQuery.TileImage")));
-            this.btnQuery.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnQuery.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.btnQuery.UseCustomBackColor = true;
-            this.btnQuery.UseCustomForeColor = true;
-            this.btnQuery.UseSelectable = true;
-            this.btnQuery.UseStyleColors = true;
-            this.btnQuery.UseTileImage = true;
             // 
             // frm_peoples_management
             // 

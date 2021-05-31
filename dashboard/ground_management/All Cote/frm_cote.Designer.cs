@@ -1,7 +1,7 @@
 ﻿
 namespace dashboard
 {
-    partial class frm_peoples_sick
+    partial class frm_cote
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace dashboard
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_peoples_sick));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_cote));
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
@@ -39,7 +39,6 @@ namespace dashboard
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_Child = new System.Windows.Forms.Panel();
-            this.cmbList = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnRefresh = new Bunifu.Framework.UI.BunifuImageButton();
             this.txtSearch = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
@@ -58,7 +57,6 @@ namespace dashboard
             // panel_Child
             // 
             this.panel_Child.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
-            this.panel_Child.Controls.Add(this.cmbList);
             this.panel_Child.Controls.Add(this.btnClose);
             this.panel_Child.Controls.Add(this.btnRefresh);
             this.panel_Child.Controls.Add(this.txtSearch);
@@ -71,35 +69,7 @@ namespace dashboard
             this.panel_Child.Location = new System.Drawing.Point(0, 0);
             this.panel_Child.Name = "panel_Child";
             this.panel_Child.Size = new System.Drawing.Size(715, 452);
-            this.panel_Child.TabIndex = 147;
-            // 
-            // cmbList
-            // 
-            this.cmbList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbList.BackColor = System.Drawing.Color.Transparent;
-            this.cmbList.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.cmbList.BorderThickness = 0;
-            this.cmbList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbList.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.cmbList.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbList.FocusedState.Parent = this.cmbList;
-            this.cmbList.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.cmbList.ForeColor = System.Drawing.Color.LightGray;
-            this.cmbList.FormattingEnabled = true;
-            this.cmbList.HoverState.Parent = this.cmbList;
-            this.cmbList.ItemHeight = 34;
-            this.cmbList.Items.AddRange(new object[] {
-            "PSIHOLOGIE",
-            "NARCOLOGIE"});
-            this.cmbList.ItemsAppearance.Parent = this.cmbList;
-            this.cmbList.Location = new System.Drawing.Point(561, 136);
-            this.cmbList.Name = "cmbList";
-            this.cmbList.ShadowDecoration.Parent = this.cmbList;
-            this.cmbList.Size = new System.Drawing.Size(121, 40);
-            this.cmbList.StartIndex = 0;
-            this.cmbList.TabIndex = 152;
-            this.cmbList.SelectedIndexChanged += new System.EventHandler(this.cmbList_SelectedIndexChanged);
+            this.panel_Child.TabIndex = 145;
             // 
             // btnClose
             // 
@@ -211,7 +181,7 @@ namespace dashboard
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(9, 430);
+            this.label1.Location = new System.Drawing.Point(6, 430);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 147;
@@ -343,13 +313,13 @@ namespace dashboard
             this.grid.RowHeadersVisible = false;
             this.grid.RowTemplate.Height = 40;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid.Size = new System.Drawing.Size(691, 280);
-            this.grid.TabIndex = 149;
+            this.grid.Size = new System.Drawing.Size(691, 291);
+            this.grid.TabIndex = 158;
             this.grid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Dark;
             this.grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellContentClick);
             this.grid.Resize += new System.EventHandler(this.grid_Resize);
             // 
-            // frm_peoples_sick
+            // frm_cote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -357,10 +327,10 @@ namespace dashboard
             this.ClientSize = new System.Drawing.Size(715, 452);
             this.Controls.Add(this.panel_Child);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frm_peoples_sick";
+            this.Name = "frm_cote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_peoples_sick";
-            this.Load += new System.EventHandler(this.frm_peoples_sick_Load);
+            this.Text = "frm_cote";
+            this.Load += new System.EventHandler(this.frm_cote_Load);
             this.panel_Child.ResumeLayout(false);
             this.panel_Child.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
@@ -382,6 +352,5 @@ namespace dashboard
         internal Guna.UI.WinForms.GunaButton btnAdd;
         private Guna.UI.WinForms.GunaVScrollBar gunaVScrollBar1;
         public Bunifu.UI.WinForms.BunifuDataGridView grid;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbList;
     }
 }

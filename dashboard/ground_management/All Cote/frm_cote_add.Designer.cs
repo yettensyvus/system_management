@@ -1,7 +1,7 @@
 ﻿
 namespace dashboard
 {
-    partial class frm_peoples_sick
+    partial class frm_cote_add
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,8 @@ namespace dashboard
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_peoples_sick));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_cote_add));
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
@@ -38,97 +39,64 @@ namespace dashboard
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel_Child = new System.Windows.Forms.Panel();
-            this.cmbList = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnRefresh = new Bunifu.Framework.UI.BunifuImageButton();
+            this.DragPanel = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.txtSearch = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnExportExcel = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnAdd = new Guna.UI.WinForms.GunaButton();
             this.gunaVScrollBar1 = new Guna.UI.WinForms.GunaVScrollBar();
+            this.label1 = new System.Windows.Forms.Label();
             this.grid = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.panel_Child.SuspendLayout();
+            this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExportExcel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel_Child
+            // pnlHeader
             // 
-            this.panel_Child.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
-            this.panel_Child.Controls.Add(this.cmbList);
-            this.panel_Child.Controls.Add(this.btnClose);
-            this.panel_Child.Controls.Add(this.btnRefresh);
-            this.panel_Child.Controls.Add(this.txtSearch);
-            this.panel_Child.Controls.Add(this.label1);
-            this.panel_Child.Controls.Add(this.btnExportExcel);
-            this.panel_Child.Controls.Add(this.btnAdd);
-            this.panel_Child.Controls.Add(this.gunaVScrollBar1);
-            this.panel_Child.Controls.Add(this.grid);
-            this.panel_Child.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Child.Location = new System.Drawing.Point(0, 0);
-            this.panel_Child.Name = "panel_Child";
-            this.panel_Child.Size = new System.Drawing.Size(715, 452);
-            this.panel_Child.TabIndex = 147;
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.pnlHeader.Controls.Add(this.label8);
+            this.pnlHeader.Controls.Add(this.btnClose);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(718, 53);
+            this.pnlHeader.TabIndex = 161;
             // 
-            // cmbList
+            // label8
             // 
-            this.cmbList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbList.BackColor = System.Drawing.Color.Transparent;
-            this.cmbList.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.cmbList.BorderThickness = 0;
-            this.cmbList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbList.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.cmbList.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbList.FocusedState.Parent = this.cmbList;
-            this.cmbList.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.cmbList.ForeColor = System.Drawing.Color.LightGray;
-            this.cmbList.FormattingEnabled = true;
-            this.cmbList.HoverState.Parent = this.cmbList;
-            this.cmbList.ItemHeight = 34;
-            this.cmbList.Items.AddRange(new object[] {
-            "PSIHOLOGIE",
-            "NARCOLOGIE"});
-            this.cmbList.ItemsAppearance.Parent = this.cmbList;
-            this.cmbList.Location = new System.Drawing.Point(561, 136);
-            this.cmbList.Name = "cmbList";
-            this.cmbList.ShadowDecoration.Parent = this.cmbList;
-            this.cmbList.Size = new System.Drawing.Size(121, 40);
-            this.cmbList.StartIndex = 0;
-            this.cmbList.TabIndex = 152;
-            this.cmbList.SelectedIndexChanged += new System.EventHandler(this.cmbList_SelectedIndexChanged);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.LightGray;
+            this.label8.Location = new System.Drawing.Point(12, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 20);
+            this.label8.TabIndex = 56;
+            this.label8.Text = "INSERT";
             // 
             // btnClose
             // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageActive = null;
-            this.btnClose.Location = new System.Drawing.Point(12, 12);
+            this.btnClose.Location = new System.Drawing.Point(670, 12);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(25, 25);
+            this.btnClose.Size = new System.Drawing.Size(36, 30);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClose.TabIndex = 151;
+            this.btnClose.TabIndex = 2;
             this.btnClose.TabStop = false;
             this.btnClose.Zoom = 10;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnRefresh
+            // DragPanel
             // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh.Image = global::dashboard.Properties.Resources.refresh_32px;
-            this.btnRefresh.ImageActive = null;
-            this.btnRefresh.Location = new System.Drawing.Point(475, 100);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(31, 30);
-            this.btnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRefresh.TabIndex = 150;
-            this.btnRefresh.TabStop = false;
-            this.btnRefresh.Zoom = 10;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.DragPanel.Fixed = true;
+            this.DragPanel.Horizontal = true;
+            this.DragPanel.TargetControl = this.pnlHeader;
+            this.DragPanel.Vertical = true;
             // 
             // txtSearch
             // 
@@ -158,7 +126,7 @@ namespace dashboard
             this.txtSearch.IconRight = global::dashboard.Properties.Resources.search_32px;
             this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(12, 95);
+            this.txtSearch.Location = new System.Drawing.Point(18, 101);
             this.txtSearch.MaxLength = 32767;
             this.txtSearch.MinimumSize = new System.Drawing.Size(100, 35);
             this.txtSearch.Modified = false;
@@ -195,7 +163,7 @@ namespace dashboard
             this.txtSearch.ShortcutsEnabled = true;
             this.txtSearch.Size = new System.Drawing.Size(203, 35);
             this.txtSearch.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
-            this.txtSearch.TabIndex = 148;
+            this.txtSearch.TabIndex = 165;
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtSearch.TextMarginBottom = 0;
             this.txtSearch.TextMarginLeft = 0;
@@ -205,75 +173,32 @@ namespace dashboard
             this.txtSearch.WordWrap = true;
             this.txtSearch.TextChange += new System.EventHandler(this.txtSearch_TextChange);
             // 
+            // gunaVScrollBar1
+            // 
+            this.gunaVScrollBar1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaVScrollBar1.LargeChange = 10;
+            this.gunaVScrollBar1.Location = new System.Drawing.Point(698, 142);
+            this.gunaVScrollBar1.Maximum = 100;
+            this.gunaVScrollBar1.Name = "gunaVScrollBar1";
+            this.gunaVScrollBar1.Radius = 0;
+            this.gunaVScrollBar1.ScrollIdleColor = System.Drawing.Color.DarkGray;
+            this.gunaVScrollBar1.Size = new System.Drawing.Size(10, 280);
+            this.gunaVScrollBar1.TabIndex = 164;
+            this.gunaVScrollBar1.ThumbColor = System.Drawing.Color.DimGray;
+            this.gunaVScrollBar1.ThumbHoverColor = System.Drawing.Color.Gray;
+            this.gunaVScrollBar1.ThumbPressedColor = System.Drawing.Color.DarkGray;
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(9, 430);
+            this.label1.Location = new System.Drawing.Point(13, 434);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 147;
+            this.label1.TabIndex = 162;
             this.label1.Text = "RECORDS:";
-            // 
-            // btnExportExcel
-            // 
-            this.btnExportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExportExcel.Image = global::dashboard.Properties.Resources.microsoft_excel_96px;
-            this.btnExportExcel.ImageActive = null;
-            this.btnExportExcel.Location = new System.Drawing.Point(512, 100);
-            this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(31, 30);
-            this.btnExportExcel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExportExcel.TabIndex = 146;
-            this.btnExportExcel.TabStop = false;
-            this.btnExportExcel.Zoom = 10;
-            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.AnimationHoverSpeed = 0.07F;
-            this.btnAdd.AnimationSpeed = 0.03F;
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnAdd.BorderColor = System.Drawing.Color.Black;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.btnAdd.ForeColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageSize = new System.Drawing.Size(12, 12);
-            this.btnAdd.Location = new System.Drawing.Point(549, 100);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAdd.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAdd.OnHoverImage = null;
-            this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAdd.Radius = 3;
-            this.btnAdd.Size = new System.Drawing.Size(133, 30);
-            this.btnAdd.TabIndex = 144;
-            this.btnAdd.Text = "CREATE ASSET";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // gunaVScrollBar1
-            // 
-            this.gunaVScrollBar1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaVScrollBar1.LargeChange = 10;
-            this.gunaVScrollBar1.Location = new System.Drawing.Point(690, 136);
-            this.gunaVScrollBar1.Maximum = 100;
-            this.gunaVScrollBar1.Name = "gunaVScrollBar1";
-            this.gunaVScrollBar1.Radius = 0;
-            this.gunaVScrollBar1.ScrollIdleColor = System.Drawing.Color.DarkGray;
-            this.gunaVScrollBar1.Size = new System.Drawing.Size(10, 280);
-            this.gunaVScrollBar1.TabIndex = 145;
-            this.gunaVScrollBar1.ThumbColor = System.Drawing.Color.DimGray;
-            this.gunaVScrollBar1.ThumbHoverColor = System.Drawing.Color.Gray;
-            this.gunaVScrollBar1.ThumbPressedColor = System.Drawing.Color.DarkGray;
             // 
             // grid
             // 
@@ -329,7 +254,7 @@ namespace dashboard
             this.grid.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.grid.HeaderBgColor = System.Drawing.Color.Empty;
             this.grid.HeaderForeColor = System.Drawing.Color.White;
-            this.grid.Location = new System.Drawing.Point(9, 136);
+            this.grid.Location = new System.Drawing.Point(14, 142);
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -343,45 +268,46 @@ namespace dashboard
             this.grid.RowHeadersVisible = false;
             this.grid.RowTemplate.Height = 40;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid.Size = new System.Drawing.Size(691, 280);
-            this.grid.TabIndex = 149;
+            this.grid.Size = new System.Drawing.Size(694, 280);
+            this.grid.TabIndex = 163;
             this.grid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Dark;
             this.grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellContentClick);
             this.grid.Resize += new System.EventHandler(this.grid_Resize);
             // 
-            // frm_peoples_sick
+            // frm_cote_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(715, 452);
-            this.Controls.Add(this.panel_Child);
+            this.ClientSize = new System.Drawing.Size(718, 456);
+            this.Controls.Add(this.pnlHeader);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.gunaVScrollBar1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.grid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frm_peoples_sick";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_peoples_sick";
-            this.Load += new System.EventHandler(this.frm_peoples_sick_Load);
-            this.panel_Child.ResumeLayout(false);
-            this.panel_Child.PerformLayout();
+            this.Name = "frm_cote_add";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "frm_cote_add";
+            this.Load += new System.EventHandler(this.frm_cote_add_Load);
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExportExcel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel_Child;
+        private System.Windows.Forms.Panel pnlHeader;
+        private System.Windows.Forms.Label label8;
         private Bunifu.Framework.UI.BunifuImageButton btnClose;
-        private Bunifu.Framework.UI.BunifuImageButton btnRefresh;
+        private Bunifu.Framework.UI.BunifuDragControl DragPanel;
         public Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtSearch;
-        private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuImageButton btnExportExcel;
-        internal Guna.UI.WinForms.GunaButton btnAdd;
         private Guna.UI.WinForms.GunaVScrollBar gunaVScrollBar1;
+        private System.Windows.Forms.Label label1;
         public Bunifu.UI.WinForms.BunifuDataGridView grid;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbList;
     }
 }

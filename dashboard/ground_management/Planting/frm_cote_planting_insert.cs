@@ -1,18 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace dashboard
 {
-    public partial class frm_peoples_upd : Form
+    public partial class frm_cote_planting_insert : Form
     {
-
-
         DBConnection conn = new DBConnection();
 
-        public int id;
+        public string id;
 
-        public frm_peoples_upd()
+        public frm_cote_planting_insert()
         {
             InitializeComponent();
         }
@@ -28,38 +33,28 @@ namespace dashboard
             this.Close();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtFullName.Text.Length == 0)
+            if (txtAn.Text.Length == 0)
             {
-                this.Alert("Please Enter Name", frm_alert.alertTypeEnum.Warning);
-                txtFullName.Focus();
-                return;
-            }
-            else if (txtFullName.Text.Length < 5)
-            {
-                this.Alert("Minimum 5 Characters Long", frm_alert.alertTypeEnum.Info);
-                txtFullName.Focus();
+                this.Alert("Please Select the Year", frm_alert.alertTypeEnum.Warning);
+                txtAn.Focus();
                 return;
             }
 
-            if (txtIDNP.Text.Length == 0)
+            if (txtPlant.Text.Length == 0)
             {
-                this.Alert("Please Enter IDNP", frm_alert.alertTypeEnum.Warning);
-                txtIDNP.Focus();
-                return;
-            }
-            else if (txtIDNP.Text.Length < 13)
-            {
-                this.Alert("13 Characters Long", frm_alert.alertTypeEnum.Info);
-                txtIDNP.Focus();
+                this.Alert("Please Select the Plant", frm_alert.alertTypeEnum.Warning);
+                txtPlant.Focus();
                 return;
             }
 
             try
             {
                 conn.ConnectionOpen();
-                string sqlExpression = "UPDATE peoples SET full_name = N'" + txtFullName.Text + "' , date_of_birth = '" + date_of_birth.Value.ToString("yyyy/MM/dd") + "' , idnp = '" + txtIDNP.Text + "' WHERE id_peoples = " + id;
+
+                string sqlExpression = "INSERT INTO cote_semanat(id_cote, an_semanat, tip_planta) " +
+                                       "VALUES ((SELECT id_cote FROM cote WHERE nr_pamant = " + id + ") ," + txtAn.Text + ", N'" + txtPlant.Text + "');";
 
                 SqlCommand interogation = new SqlCommand(sqlExpression, conn.connection);
                 SqlDataReader reader = interogation.ExecuteReader();
@@ -71,6 +66,7 @@ namespace dashboard
             }
             catch (Exception ex)
             {
+                conn.ConnectionClose();
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

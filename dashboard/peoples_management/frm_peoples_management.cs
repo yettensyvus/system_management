@@ -54,5 +54,11 @@ namespace dashboard
             frm_peoples_graph fm = new frm_peoples_graph();
             open_form(fm);
         }
+
+        private void btnQuery_Click(object sender, EventArgs e)
+        {
+            frm_peoples_query fm = new frm_peoples_query();
+            open_form(fm);
+        }
     }
 }

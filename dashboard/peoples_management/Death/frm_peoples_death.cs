@@ -41,7 +41,7 @@ namespace dashboard
             try
             {
                 conn.ConnectionOpen();
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT id_deces AS ID, full_name AS NUME, date_of_birth AS DATE, idnp AS IDNP, date_of_death AS DECES FROM peoples_deces  ", conn.connection);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT id_deces AS ID, full_name AS NUME, idnp AS IDNP, date_of_birth AS DATE, date_of_death AS DECES FROM peoples_deces  ", conn.connection);
                 DataTable data = new DataTable();
                 sda.Fill(data);
                 grid.DataSource = data;
@@ -60,8 +60,8 @@ namespace dashboard
         {
             this.grid.Columns["ID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.grid.Columns["NUME"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.grid.Columns["DATE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.grid.Columns["IDNP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["DATE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.grid.Columns["DECES"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 

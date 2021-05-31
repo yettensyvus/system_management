@@ -7,18 +7,16 @@ using System.Windows.Forms;
 
 namespace dashboard
 {
-
-    public partial class frm_peoples : Form
+    public partial class frm_cote_harvest : Form
     {
         #region main
         DBConnection conn = new DBConnection();
 
         private Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper vScrollHelper;
 
-        public frm_peoples()
+        public frm_cote_harvest()
         {
             InitializeComponent();
-            DoubleBuffering.SetDoubleBuffering(this, true);
         }
         #endregion
 
@@ -54,23 +52,18 @@ namespace dashboard
             this.grid.Columns["EDIT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
         }
 
-        private void add_delete_btn()
-        {
-            DataGridViewImageColumn img = new DataGridViewImageColumn();
-            Image image = Resources.trash_32px;
-            img.Image = image;
-            grid.Columns.Add(img);
-            img.HeaderText = "DELETE";
-            img.Name = "DELETE";
-            this.grid.Columns["DELETE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-        }
-
         private void all_data()
         {
             try
             {
                 conn.ConnectionOpen();
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT id_peoples AS ID, full_name AS NUME, date_of_birth AS DATE, idnp AS IDNP FROM peoples", conn.connection);
+                string query = "SELECT cote_recolta.id_recolta AS ID, cote.nr_pamant AS NR_PAMANT, cote.suprafata_h AS SUPRAFATA, cote_semanat.an_semanat AS AN, cote_semanat.tip_planta AS PLANTA, cote_recolta.tone_recolta AS TONE " +
+                               "FROM cote_recolta INNER JOIN " +
+                               "cote_semanat ON cote_recolta.id_semanat = cote_semanat.id_semanat INNER JOIN " +
+                               "cote ON cote_semanat.id_cote = cote.id_cote " +
+                               "ORDER BY cote_recolta.id_recolta";
+
+                SqlDataAdapter sda = new SqlDataAdapter(query, conn.connection);
                 DataTable data = new DataTable();
                 sda.Fill(data);
                 grid.DataSource = data;
@@ -88,16 +81,15 @@ namespace dashboard
         private void grid_fill()
         {
             this.grid.Columns["ID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.grid.Columns["NUME"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.grid.Columns["DATE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.grid.Columns["IDNP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.grid.Columns["NR_PAMANT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["SUPRAFATA"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["AN"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["PLANTA"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["TONE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             this.grid.Columns["EDIT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.grid.Columns["DELETE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
             this.grid.Columns["EDIT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.grid.Columns["DELETE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
-
         private void copyAlltoClipboard()
         {
             grid.SelectAll();
@@ -108,19 +100,15 @@ namespace dashboard
 
         #endregion
 
-        #region control_events
-
-        private void frm_peoples_Load(object sender, EventArgs e)
+        private void frm_cote_harvest_Load(object sender, EventArgs e)
         {
             vScrollHelper = new Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(grid, gunaVScrollBar1, true);
 
-            add_delete_btn();
             add_edit_btn();
             all_data();
             grid_fill();
 
             vScrollHelper.UpdateScrollBar();
-
         }
 
         private void grid_Resize(object sender, EventArgs e)
@@ -138,63 +126,25 @@ namespace dashboard
             }
 
             int index = grid.Columns["EDIT"].Index;
-            int indexx = grid.Columns["DELETE"].Index;
 
             if (e.ColumnIndex == index)
             {
-                frm_peoples_upd form = new frm_peoples_upd();
+                frm_cote_harvest_upd form = new frm_cote_harvest_upd();
 
-                int id = int.Parse(grid.CurrentRow.Cells["ID"].Value.ToString());
+                string id = grid.CurrentRow.Cells["ID"].Value.ToString();
 
                 try
                 {
-                    string full_name = grid.CurrentRow.Cells["NUME"].Value.ToString();
+                    string nr_pamant = grid.CurrentRow.Cells["NR_PAMANT"].Value.ToString();
 
-                    string message = string.Format("Edit People: {0}?", full_name);
+                    string message = string.Format("Edit Harvest for this quota: {0}?", nr_pamant);
 
                     if (CustomMessageBox.ShowMessage(message, "Confirm Edit!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         form.id = id;
-
-                        form.txtFullName.Text = grid.Rows[e.RowIndex].Cells["NUME"].Value.ToString();
-                        form.date_of_birth.Value = Convert.ToDateTime(grid.Rows[e.RowIndex].Cells["DATE"].Value.ToString());
-                        form.txtIDNP.Text = grid.Rows[e.RowIndex].Cells["IDNP"].Value.ToString();
+                        form.txtKG.Text = grid.Rows[e.RowIndex].Cells["TONE"].Value.ToString();
                         form.ShowDialog();
                         return;
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            if (e.ColumnIndex == indexx)
-            {
-                int id = int.Parse(grid.CurrentRow.Cells["ID"].Value.ToString());
-
-                try
-                {
-                    string full_name = grid.CurrentRow.Cells["NUME"].Value.ToString();
-
-                    string message = string.Format("Remove People: {0}?", full_name);
-
-                    if (CustomMessageBox.ShowMessage(message, "Confirm Remove!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        conn.ConnectionOpen();
-                        string sqlExpression = "DELETE FROM peoples WHERE id_peoples = " + id;
-
-                        SqlCommand interogation = new SqlCommand(sqlExpression, conn.connection);
-                        SqlDataReader reader = interogation.ExecuteReader();
-
-                        reader.Close();
-                        conn.ConnectionClose();
-
-                        this.Alert("SUCCESS!", frm_alert.alertTypeEnum.Success);
-
-                        all_data();
-                        label1.Text = "RECORDS: " + grid.Rows.Count.ToString();
                     }
 
                 }
@@ -209,7 +159,7 @@ namespace dashboard
         {
             try
             {
-                (grid.DataSource as DataTable).DefaultView.RowFilter = string.Format("NUME LIKE '%{0}%' OR IDNP LIKE '%{0}%'", txtSearch.Text);
+                (grid.DataSource as DataTable).DefaultView.RowFilter = string.Format("Convert(NR_PAMANT, 'System.String') LIKE '%{0}%'", txtSearch.Text);
                 label1.Text = "RECORDS: " + grid.Rows.Count.ToString();
             }
             catch (Exception ex)
@@ -217,7 +167,6 @@ namespace dashboard
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void btnExportExcel_Click(object sender, EventArgs e)
         {
@@ -233,7 +182,6 @@ namespace dashboard
             Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
             CR.Select();
             xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
-
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -241,22 +189,16 @@ namespace dashboard
             all_data();
         }
 
-
-
-
-        #endregion
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frm_peoples_add form = new frm_peoples_add();
+            frm_cote_harvest_add form = new frm_cote_harvest_add();
             form.ShowDialog();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            frm_peoples_management fm = new frm_peoples_management();
+            frm_ground_management fm = new frm_ground_management();
             open_form(fm);
         }
-
     }
 }

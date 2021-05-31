@@ -112,6 +112,90 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ground_management\All Cote\frm_cote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ground_management\All Cote\frm_cote.Designer.cs">
+      <DependentUpon>frm_cote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ground_management\All Cote\frm_cote_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ground_management\All Cote\frm_cote_add.Designer.cs">
+      <DependentUpon>frm_cote_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ground_management\All Cote\frm_cote_insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ground_management\All Cote\frm_cote_insert.Designer.cs">
+      <DependentUpon>frm_cote_insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ground_management\All Cote\frm_cote_upd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ground_management\All Cote\frm_cote_upd.Designer.cs">
+      <DependentUpon>frm_cote_upd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ground_management\frm_ground_management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ground_management\frm_ground_management.Designer.cs">
+      <DependentUpon>frm_ground_management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ground_management\Harvest\frm_cote_harvest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ground_management\Harvest\frm_cote_harvest.Designer.cs">
+      <DependentUpon>frm_cote_harvest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ground_management\Harvest\frm_cote_harvest_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ground_management\Harvest\frm_cote_harvest_add.Designer.cs">
+      <DependentUpon>frm_cote_harvest_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ground_management\Harvest\frm_cote_harvest_insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ground_management\Harvest\frm_cote_harvest_insert.Designer.cs">
+      <DependentUpon>frm_cote_harvest_insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ground_management\Harvest\frm_cote_harvest_upd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ground_management\Harvest\frm_cote_harvest_upd.Designer.cs">
+      <DependentUpon>frm_cote_harvest_upd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ground_management\Planting\frm_cote_planting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ground_management\Planting\frm_cote_planting.Designer.cs">
+      <DependentUpon>frm_cote_planting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ground_management\Planting\frm_cote_planting_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ground_management\Planting\frm_cote_planting_add.Designer.cs">
+      <DependentUpon>frm_cote_planting_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ground_management\Planting\frm_cote_planting_insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ground_management\Planting\frm_cote_planting_insert.Designer.cs">
+      <DependentUpon>frm_cote_planting_insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ground_management\Planting\frm_cote_planting_upd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ground_management\Planting\frm_cote_planting_upd.Designer.cs">
+      <DependentUpon>frm_cote_planting_upd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="peoples_management\Query\frm_peoples_query.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="peoples_management\Query\frm_peoples_query.Designer.cs">
+      <DependentUpon>frm_peoples_query.cs</DependentUpon>
+    </Compile>
     <Compile Include="peoples_management\Graph\frm_peoples_graph.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +370,48 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ground_management\All Cote\frm_cote.resx">
+      <DependentUpon>frm_cote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ground_management\All Cote\frm_cote_add.resx">
+      <DependentUpon>frm_cote_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ground_management\All Cote\frm_cote_insert.resx">
+      <DependentUpon>frm_cote_insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ground_management\All Cote\frm_cote_upd.resx">
+      <DependentUpon>frm_cote_upd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ground_management\frm_ground_management.resx">
+      <DependentUpon>frm_ground_management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ground_management\Harvest\frm_cote_harvest.resx">
+      <DependentUpon>frm_cote_harvest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ground_management\Harvest\frm_cote_harvest_add.resx">
+      <DependentUpon>frm_cote_harvest_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ground_management\Harvest\frm_cote_harvest_insert.resx">
+      <DependentUpon>frm_cote_harvest_insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ground_management\Harvest\frm_cote_harvest_upd.resx">
+      <DependentUpon>frm_cote_harvest_upd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ground_management\Planting\frm_cote_planting.resx">
+      <DependentUpon>frm_cote_planting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ground_management\Planting\frm_cote_planting_add.resx">
+      <DependentUpon>frm_cote_planting_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ground_management\Planting\frm_cote_planting_insert.resx">
+      <DependentUpon>frm_cote_planting_insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ground_management\Planting\frm_cote_planting_upd.resx">
+      <DependentUpon>frm_cote_planting_upd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="peoples_management\Query\frm_peoples_query.resx">
+      <DependentUpon>frm_peoples_query.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="peoples_management\Graph\frm_peoples_graph.resx">
       <DependentUpon>frm_peoples_graph.cs</DependentUpon>
     </EmbeddedResource>
@@ -490,8 +616,6 @@
   <ItemGroup>
     <None Include="Resources\add_32px.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="peoples_management\Query\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

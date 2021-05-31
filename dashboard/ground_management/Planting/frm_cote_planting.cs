@@ -1,21 +1,25 @@
 ﻿using dashboard.Properties;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace dashboard
-{
-
-    public partial class frm_peoples : Form
+{ 
+    public partial class frm_cote_planting : Form
     {
         #region main
         DBConnection conn = new DBConnection();
 
         private Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper vScrollHelper;
 
-        public frm_peoples()
+        public frm_cote_planting()
         {
             InitializeComponent();
             DoubleBuffering.SetDoubleBuffering(this, true);
@@ -54,23 +58,17 @@ namespace dashboard
             this.grid.Columns["EDIT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
         }
 
-        private void add_delete_btn()
-        {
-            DataGridViewImageColumn img = new DataGridViewImageColumn();
-            Image image = Resources.trash_32px;
-            img.Image = image;
-            grid.Columns.Add(img);
-            img.HeaderText = "DELETE";
-            img.Name = "DELETE";
-            this.grid.Columns["DELETE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-        }
-
         private void all_data()
         {
             try
             {
                 conn.ConnectionOpen();
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT id_peoples AS ID, full_name AS NUME, date_of_birth AS DATE, idnp AS IDNP FROM peoples", conn.connection);
+                string query = "SELECT cote_semanat.id_semanat AS ID, cote.nr_pamant AS NR_PAMANT, cote.suprafata_h AS SUPRAFATA, cote_semanat.an_semanat AS AN_SEMANAT, cote_semanat.tip_planta AS PLANTA " +
+                               "FROM cote INNER JOIN " +
+                               "cote_semanat ON cote.id_cote = cote_semanat.id_cote " +
+                               "ORDER BY cote_semanat.id_semanat";
+
+                SqlDataAdapter sda = new SqlDataAdapter(query, conn.connection);
                 DataTable data = new DataTable();
                 sda.Fill(data);
                 grid.DataSource = data;
@@ -88,14 +86,13 @@ namespace dashboard
         private void grid_fill()
         {
             this.grid.Columns["ID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.grid.Columns["NUME"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.grid.Columns["DATE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.grid.Columns["IDNP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.grid.Columns["NR_PAMANT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["SUPRAFATA"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["AN_SEMANAT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["PLANTA"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             this.grid.Columns["EDIT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.grid.Columns["DELETE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
             this.grid.Columns["EDIT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.grid.Columns["DELETE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void copyAlltoClipboard()
@@ -110,11 +107,10 @@ namespace dashboard
 
         #region control_events
 
-        private void frm_peoples_Load(object sender, EventArgs e)
+        private void frm_cote_planting_Load(object sender, EventArgs e)
         {
             vScrollHelper = new Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(grid, gunaVScrollBar1, true);
 
-            add_delete_btn();
             add_edit_btn();
             all_data();
             grid_fill();
@@ -138,63 +134,27 @@ namespace dashboard
             }
 
             int index = grid.Columns["EDIT"].Index;
-            int indexx = grid.Columns["DELETE"].Index;
 
             if (e.ColumnIndex == index)
             {
-                frm_peoples_upd form = new frm_peoples_upd();
+                frm_cote_planting_upd form = new frm_cote_planting_upd();
 
                 int id = int.Parse(grid.CurrentRow.Cells["ID"].Value.ToString());
 
                 try
                 {
-                    string full_name = grid.CurrentRow.Cells["NUME"].Value.ToString();
+                    string nr_pamant = grid.CurrentRow.Cells["NR_PAMANT"].Value.ToString();
 
-                    string message = string.Format("Edit People: {0}?", full_name);
+                    string message = string.Format("Edit quota data: {0}?", nr_pamant);
 
                     if (CustomMessageBox.ShowMessage(message, "Confirm Edit!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         form.id = id;
 
-                        form.txtFullName.Text = grid.Rows[e.RowIndex].Cells["NUME"].Value.ToString();
-                        form.date_of_birth.Value = Convert.ToDateTime(grid.Rows[e.RowIndex].Cells["DATE"].Value.ToString());
-                        form.txtIDNP.Text = grid.Rows[e.RowIndex].Cells["IDNP"].Value.ToString();
+                        form.txtAn.Text = grid.Rows[e.RowIndex].Cells["AN_SEMANAT"].Value.ToString();
+                        form.txtPlant.Text = grid.Rows[e.RowIndex].Cells["PLANTA"].Value.ToString();
                         form.ShowDialog();
                         return;
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            if (e.ColumnIndex == indexx)
-            {
-                int id = int.Parse(grid.CurrentRow.Cells["ID"].Value.ToString());
-
-                try
-                {
-                    string full_name = grid.CurrentRow.Cells["NUME"].Value.ToString();
-
-                    string message = string.Format("Remove People: {0}?", full_name);
-
-                    if (CustomMessageBox.ShowMessage(message, "Confirm Remove!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        conn.ConnectionOpen();
-                        string sqlExpression = "DELETE FROM peoples WHERE id_peoples = " + id;
-
-                        SqlCommand interogation = new SqlCommand(sqlExpression, conn.connection);
-                        SqlDataReader reader = interogation.ExecuteReader();
-
-                        reader.Close();
-                        conn.ConnectionClose();
-
-                        this.Alert("SUCCESS!", frm_alert.alertTypeEnum.Success);
-
-                        all_data();
-                        label1.Text = "RECORDS: " + grid.Rows.Count.ToString();
                     }
 
                 }
@@ -209,7 +169,7 @@ namespace dashboard
         {
             try
             {
-                (grid.DataSource as DataTable).DefaultView.RowFilter = string.Format("NUME LIKE '%{0}%' OR IDNP LIKE '%{0}%'", txtSearch.Text);
+                (grid.DataSource as DataTable).DefaultView.RowFilter = string.Format("Convert(NR_PAMANT, 'System.String') LIKE '%{0}%'", txtSearch.Text);
                 label1.Text = "RECORDS: " + grid.Rows.Count.ToString();
             }
             catch (Exception ex)
@@ -241,20 +201,17 @@ namespace dashboard
             all_data();
         }
 
-
-
-
         #endregion
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frm_peoples_add form = new frm_peoples_add();
+            frm_cote_planting_add form = new frm_cote_planting_add();
             form.ShowDialog();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            frm_peoples_management fm = new frm_peoples_management();
+            frm_ground_management fm = new frm_ground_management();
             open_form(fm);
         }
 

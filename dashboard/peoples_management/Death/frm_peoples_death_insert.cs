@@ -28,16 +28,29 @@ namespace dashboard
             {
                 conn.ConnectionOpen();
 
-                string begin = "BEGIN TRANSACTION;";
-                string query1 = "INSERT INTO peoples_deces (full_name, date_of_birth, idnp, date_of_death) VALUES ((SELECT full_name FROM peoples WHERE id_peoples = " + id + " ), (SELECT date_of_birth FROM peoples WHERE id_peoples = " + id + " ), (SELECT idnp FROM peoples WHERE id_peoples = " + id + " ), ' " + date_of_death.Value.ToString("yyyy/MM/dd") + "');";
-                string query2 = "DELETE FROM peoples WHERE id_peoples = " + id + ";";
-                string query3 = "DELETE FROM peoples_pension WHERE id_peoples = " + id + ";";
-                string query4 = "DELETE FROM peoples_bolnav WHERE id_peoples = " + id + ";";
-                string commit = "COMMIT TRANSACTION;";
+                string query = " BEGIN TRANSACTION;" +
+                               " INSERT INTO peoples_deces (full_name, date_of_birth, idnp, date_of_death) " +
+                               " VALUES ((SELECT full_name FROM peoples WHERE id_peoples = " + id + " ), " +
+                               " (SELECT date_of_birth FROM peoples WHERE id_peoples = " + id + " ), " +
+                               " (SELECT idnp FROM peoples WHERE id_peoples = " + id + " ), ' " + date_of_death.Value.ToString("yyyy/MM/dd") + "');" +
 
-                string sqlExpression = begin + query1 + query2 + query3 + query4 + commit;
+                               " DELETE FROM cote_recolta WHERE id_semanat = " +
+                               " (SELECT id_semanat FROM cote_semanat WHERE id_cote = " +
+                               " (SELECT id_cote FROM cote WHERE id_peoples = " + id + "));" +
 
-                SqlCommand interogation = new SqlCommand(sqlExpression, conn.connection);
+                               " DELETE FROM cote_semanat WHERE id_cote = (SELECT id_cote FROM cote WHERE id_peoples = " + id + ");" +
+
+                               " DELETE FROM cote WHERE id_peoples = " + id + ";" +
+
+                               " DELETE FROM peoples_bolnav WHERE id_peoples = " + id + ";" +
+
+                               " DELETE FROM peoples_pension WHERE id_peoples = " + id + ";" +
+
+                               " DELETE FROM peoples WHERE id_peoples = " + id + ";" +
+
+                               " COMMIT TRANSACTION;";
+
+                SqlCommand interogation = new SqlCommand(query, conn.connection);
                 SqlDataReader reader = interogation.ExecuteReader();
 
                 reader.Close();

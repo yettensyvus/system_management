@@ -133,41 +133,50 @@ namespace dashboard
             label_1.Text = "TOTAL";
             progress_1.Value = peoples_total;
             label_num_1.Text = progress_1.Value.ToString();
-            round_1.Value = 100 - ((deces_total * 100) / (peoples_total + deces_total));
+            //round_1.Value = 15000 - ((deces_total * 100) / (peoples_total + deces_total));
 
             label_2.Text = "DECES";
             progress_2.Value = deces_total;
             label_num_2.Text = progress_2.Value.ToString();
-            round_2.Value = ((deces_total * 100) / (peoples_total + deces_total));
+            //round_2.Value = ((deces_total * 100) / (peoples_total + deces_total));
         }
 
 
-        private void sick_table()
+        private void sick_table_category()
         {
             peoples_count();
 
-            string psiholog = null;
-            string narcolog = null;
+            int bolnavi = 0;
 
-            //numarul de bolnavi - psiholog
+            //lets get a canvas to paint graphs on
+            Canvas Charts = new Canvas();
+
+            //graph dataPoint
+            DataPoint graph = new DataPoint(BunifuDataViz._type.Bunifu_stackedColumn);
+
             try
             {
                 conn.ConnectionOpen();
 
-                string query =  "SELECT COUNT(id_bolnav) AS total " +
-                                "FROM peoples_bolnav " +
-                                "GROUP BY tip_evidenta " +
-                                "HAVING(tip_evidenta = N'PSIHOLOGIE') ";
+                string query = "SELECT tip_evidenta AS TIP, COUNT(id_bolnav) AS TOTAL FROM peoples_bolnav GROUP BY tip_evidenta";
+                SqlDataAdapter sda = new SqlDataAdapter(query, conn.connection);
+                DataTable dtbl = new DataTable();
+                sda.Fill(dtbl);
 
-                SqlCommand command = new SqlCommand(query, conn.connection);
-
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+                for (int i = 0; i < dtbl.Rows.Count; i++)
                 {
-                    psiholog = reader[0].ToString();
+                    //sample data for datapoint
+                    graph.addLabely(dtbl.Rows[i]["TIP"].ToString(), dtbl.Rows[i]["TOTAL"].ToString());
+
+                    //calculam numarul total de bolnavi
+                    bolnavi += Int32.Parse(dtbl.Rows[i]["TOTAL"].ToString());
                 }
 
-                reader.Close();
+                //add datapoints to one canvas
+                Charts.addData(graph);
+
+                //render canvas through bunifu dataviz component.
+                dataViz.Render(Charts);
 
                 conn.ConnectionClose();
 
@@ -178,40 +187,27 @@ namespace dashboard
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            //total bolnavi
 
-            //numarul de bolnavi - narcolog
-            try
-            {
-                conn.ConnectionOpen();
+            label_name.Text = "NUMĂRUL BOLNAVILOR DUPĂ CATEGORIE";
 
-                string query =  "SELECT COUNT(id_bolnav) AS total " +
-                                "FROM peoples_bolnav " +
-                                "GROUP BY tip_evidenta " +
-                                "HAVING(tip_evidenta = N'NARCOLOGIE')";
+            label_1.Text = "TOTAL";
+            progress_1.Value = peoples_total;
+            label_num_1.Text = progress_1.Value.ToString();
+            //round_1.Value = 15000 - ((bolnavi * 100) / (peoples_total + bolnavi));
 
+            label_2.Text = "BOLNAVI";
+            progress_2.Value = bolnavi;
+            label_num_2.Text = progress_2.Value.ToString();
+            //round_2.Value = ((bolnavi * 100) / (peoples_total + bolnavi));
 
-                SqlCommand command = new SqlCommand(query, conn.connection);
+        }
 
-                SqlDataReader reader = command.ExecuteReader();
+        private void sick_table_malady()
+        {
+            peoples_count();
 
-                while (reader.Read())
-                {
-                    narcolog = reader[0].ToString();
-                }
-
-                reader.Close();
-
-                conn.ConnectionClose();
-
-            }
-            catch (Exception ex)
-            {
-                conn.ConnectionClose();
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-            //grafic
+            int bolnavi = 0;
 
             //lets get a canvas to paint graphs on
             Canvas Charts = new Canvas();
@@ -219,31 +215,54 @@ namespace dashboard
             //graph dataPoint
             DataPoint graph = new DataPoint(BunifuDataViz._type.Bunifu_stackedBar);
 
-            graph.addLabely("PSIHOLOG", Int32.Parse(psiholog));
-            graph.addLabely("NARCOLOG", Int32.Parse(narcolog));
+            try
+            {
+                conn.ConnectionOpen();
 
-            //add datapoints to one canvas
-            Charts.addData(graph);
+                string query = "SELECT diagnoza AS DIAGNOZ, COUNT(id_bolnav) AS TOTAL FROM peoples_bolnav GROUP BY diagnoza";
+                SqlDataAdapter sda = new SqlDataAdapter(query, conn.connection);
+                DataTable dtbl = new DataTable();
+                sda.Fill(dtbl);
 
-            //render canvas through bunifu dataviz component.
-            dataViz.Render(Charts);
+                for (int i = 0; i < dtbl.Rows.Count; i++)
+                {
+                    //sample data for datapoint
+                    graph.addLabely(dtbl.Rows[i]["DIAGNOZ"].ToString(), dtbl.Rows[i]["TOTAL"].ToString());
+
+                    //calculam numarul total de bolnavi
+                    bolnavi += Int32.Parse(dtbl.Rows[i]["TOTAL"].ToString());
+                }
+
+                //add datapoints to one canvas
+                Charts.addData(graph);
+
+                //render canvas through bunifu dataviz component.
+                dataViz.Render(Charts);
+
+                conn.ConnectionClose();
+
+            }
+            catch (Exception ex)
+            {
+                conn.ConnectionClose();
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             //total bolnavi
-            int bolnavi = Int32.Parse(psiholog) + Int32.Parse(narcolog);
 
-            label_name.Text = "NUMĂRUL BOLNAVILOR DUPĂ CATEGORIE";
+            label_name.Text = "NUMĂRUL BOLNAVILOR DUPĂ DIAGNOZĂ";
 
             label_1.Text = "TOTAL";
             progress_1.Value = peoples_total;
             label_num_1.Text = progress_1.Value.ToString();
-            round_1.Value = 100 - ((bolnavi * 100) / (peoples_total + bolnavi));
+            //round_1.Value = 15000 - ((bolnavi * 100) / (peoples_total + bolnavi));
 
             label_2.Text = "BOLNAVI";
             progress_2.Value = bolnavi;
             label_num_2.Text = progress_2.Value.ToString();
-            round_2.Value = ((bolnavi * 100) / (peoples_total + bolnavi));
-
+            //round_2.Value = ((bolnavi * 100) / (peoples_total + bolnavi));
         }
+
 
         private void cmbList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -251,9 +270,13 @@ namespace dashboard
             {
                 death_table();
             }
-            else if (cmbList.Text == "SICK")
+            else if (cmbList.Text == "SICK BY CATEGORY")
             {
-                sick_table();
+                sick_table_category();
+            }
+            else if (cmbList.Text == "SICK BY MALADY")
+            {
+                sick_table_malady();
             }
         }
     }

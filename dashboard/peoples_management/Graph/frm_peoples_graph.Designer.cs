@@ -109,12 +109,13 @@ namespace dashboard
             this.cmbList.ItemHeight = 34;
             this.cmbList.Items.AddRange(new object[] {
             "DEATH",
-            "SICK"});
+            "SICK BY CATEGORY",
+            "SICK BY MALADY"});
             this.cmbList.ItemsAppearance.Parent = this.cmbList;
-            this.cmbList.Location = new System.Drawing.Point(598, 12);
+            this.cmbList.Location = new System.Drawing.Point(509, 12);
             this.cmbList.Name = "cmbList";
             this.cmbList.ShadowDecoration.Parent = this.cmbList;
-            this.cmbList.Size = new System.Drawing.Size(121, 40);
+            this.cmbList.Size = new System.Drawing.Size(210, 40);
             this.cmbList.StartIndex = 0;
             this.cmbList.TabIndex = 169;
             this.cmbList.SelectedIndexChanged += new System.EventHandler(this.cmbList_SelectedIndexChanged);
@@ -173,7 +174,7 @@ namespace dashboard
             this.progress_2.BorderRadius = 5;
             this.progress_2.BorderThickness = 1;
             this.progress_2.Location = new System.Drawing.Point(9, 81);
-            this.progress_2.MaximumValue = 1000;
+            this.progress_2.MaximumValue = 15000;
             this.progress_2.MinimumValue = 0;
             this.progress_2.Name = "progress_2";
             this.progress_2.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(69)))));
@@ -198,7 +199,7 @@ namespace dashboard
             this.round_2.LineThickness = 5;
             this.round_2.Location = new System.Drawing.Point(605, 9);
             this.round_2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.round_2.MaxValue = 100;
+            this.round_2.MaxValue = 15000;
             this.round_2.Name = "round_2";
             this.round_2.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(69)))));
             this.round_2.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(227)))), ((int)(((byte)(189)))));
@@ -279,7 +280,7 @@ namespace dashboard
             this.round_1.LineThickness = 5;
             this.round_1.Location = new System.Drawing.Point(497, 9);
             this.round_1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.round_1.MaxValue = 100;
+            this.round_1.MaxValue = 15000;
             this.round_1.Name = "round_1";
             this.round_1.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(69)))));
             this.round_1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(58)))), ((int)(((byte)(108)))));
@@ -298,7 +299,7 @@ namespace dashboard
             this.progress_1.BorderRadius = 5;
             this.progress_1.BorderThickness = 1;
             this.progress_1.Location = new System.Drawing.Point(9, 38);
-            this.progress_1.MaximumValue = 1000;
+            this.progress_1.MaximumValue = 15000;
             this.progress_1.MinimumValue = 0;
             this.progress_1.Name = "progress_1";
             this.progress_1.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(69)))));

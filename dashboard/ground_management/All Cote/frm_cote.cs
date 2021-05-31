@@ -7,15 +7,14 @@ using System.Windows.Forms;
 
 namespace dashboard
 {
-
-    public partial class frm_peoples : Form
+    public partial class frm_cote : Form
     {
         #region main
         DBConnection conn = new DBConnection();
 
         private Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper vScrollHelper;
 
-        public frm_peoples()
+        public frm_cote()
         {
             InitializeComponent();
             DoubleBuffering.SetDoubleBuffering(this, true);
@@ -54,23 +53,17 @@ namespace dashboard
             this.grid.Columns["EDIT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
         }
 
-        private void add_delete_btn()
-        {
-            DataGridViewImageColumn img = new DataGridViewImageColumn();
-            Image image = Resources.trash_32px;
-            img.Image = image;
-            grid.Columns.Add(img);
-            img.HeaderText = "DELETE";
-            img.Name = "DELETE";
-            this.grid.Columns["DELETE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-        }
-
         private void all_data()
         {
             try
             {
                 conn.ConnectionOpen();
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT id_peoples AS ID, full_name AS NUME, date_of_birth AS DATE, idnp AS IDNP FROM peoples", conn.connection);
+                string query = "SELECT cote.id_cote AS ID, peoples.full_name AS NUME, peoples.idnp AS IDNP, cote.nr_pamant AS NR_PAMANT, cote.suprafata_h AS SUPRAFATA " +
+                               "FROM cote INNER JOIN " +
+                               "peoples ON cote.id_peoples = peoples.id_peoples " +
+                               "ORDER BY cote.id_cote";
+
+                SqlDataAdapter sda = new SqlDataAdapter(query, conn.connection);
                 DataTable data = new DataTable();
                 sda.Fill(data);
                 grid.DataSource = data;
@@ -89,13 +82,12 @@ namespace dashboard
         {
             this.grid.Columns["ID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.grid.Columns["NUME"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.grid.Columns["DATE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.grid.Columns["IDNP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.grid.Columns["IDNP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["NR_PAMANT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.grid.Columns["SUPRAFATA"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             this.grid.Columns["EDIT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.grid.Columns["DELETE"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
             this.grid.Columns["EDIT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.grid.Columns["DELETE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void copyAlltoClipboard()
@@ -110,11 +102,10 @@ namespace dashboard
 
         #region control_events
 
-        private void frm_peoples_Load(object sender, EventArgs e)
+        private void frm_cote_Load(object sender, EventArgs e)
         {
             vScrollHelper = new Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(grid, gunaVScrollBar1, true);
 
-            add_delete_btn();
             add_edit_btn();
             all_data();
             grid_fill();
@@ -138,63 +129,27 @@ namespace dashboard
             }
 
             int index = grid.Columns["EDIT"].Index;
-            int indexx = grid.Columns["DELETE"].Index;
 
             if (e.ColumnIndex == index)
             {
-                frm_peoples_upd form = new frm_peoples_upd();
+                frm_cote_upd form = new frm_cote_upd();
 
                 int id = int.Parse(grid.CurrentRow.Cells["ID"].Value.ToString());
 
                 try
                 {
-                    string full_name = grid.CurrentRow.Cells["NUME"].Value.ToString();
+                    string nr_pamant = grid.CurrentRow.Cells["NR_PAMANT"].Value.ToString();
 
-                    string message = string.Format("Edit People: {0}?", full_name);
+                    string message = string.Format("Edit Cote: {0}?", nr_pamant);
 
                     if (CustomMessageBox.ShowMessage(message, "Confirm Edit!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         form.id = id;
 
-                        form.txtFullName.Text = grid.Rows[e.RowIndex].Cells["NUME"].Value.ToString();
-                        form.date_of_birth.Value = Convert.ToDateTime(grid.Rows[e.RowIndex].Cells["DATE"].Value.ToString());
-                        form.txtIDNP.Text = grid.Rows[e.RowIndex].Cells["IDNP"].Value.ToString();
+                        form.txtGroundNumber.Text = grid.Rows[e.RowIndex].Cells["NR_PAMANT"].Value.ToString();
+                        form.txtArea.Text = grid.Rows[e.RowIndex].Cells["SUPRAFATA"].Value.ToString();
                         form.ShowDialog();
                         return;
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            if (e.ColumnIndex == indexx)
-            {
-                int id = int.Parse(grid.CurrentRow.Cells["ID"].Value.ToString());
-
-                try
-                {
-                    string full_name = grid.CurrentRow.Cells["NUME"].Value.ToString();
-
-                    string message = string.Format("Remove People: {0}?", full_name);
-
-                    if (CustomMessageBox.ShowMessage(message, "Confirm Remove!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        conn.ConnectionOpen();
-                        string sqlExpression = "DELETE FROM peoples WHERE id_peoples = " + id;
-
-                        SqlCommand interogation = new SqlCommand(sqlExpression, conn.connection);
-                        SqlDataReader reader = interogation.ExecuteReader();
-
-                        reader.Close();
-                        conn.ConnectionClose();
-
-                        this.Alert("SUCCESS!", frm_alert.alertTypeEnum.Success);
-
-                        all_data();
-                        label1.Text = "RECORDS: " + grid.Rows.Count.ToString();
                     }
 
                 }
@@ -209,7 +164,7 @@ namespace dashboard
         {
             try
             {
-                (grid.DataSource as DataTable).DefaultView.RowFilter = string.Format("NUME LIKE '%{0}%' OR IDNP LIKE '%{0}%'", txtSearch.Text);
+                (grid.DataSource as DataTable).DefaultView.RowFilter = string.Format("NUME LIKE '%{0}%' OR IDNP LIKE '%{0}%' OR Convert(NR_PAMANT, 'System.String') LIKE '%{0}%'", txtSearch.Text);
                 label1.Text = "RECORDS: " + grid.Rows.Count.ToString();
             }
             catch (Exception ex)
@@ -241,20 +196,17 @@ namespace dashboard
             all_data();
         }
 
-
-
-
         #endregion
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frm_peoples_add form = new frm_peoples_add();
+            frm_cote_add form = new frm_cote_add();
             form.ShowDialog();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            frm_peoples_management fm = new frm_peoples_management();
+            frm_ground_management fm = new frm_ground_management();
             open_form(fm);
         }
 
